@@ -249,24 +249,26 @@
                             }
 
                             data.posts.forEach((post) => {
-                                const card = document.createElement('div');
-                                card.className = 'group bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 relative';
+                                const card = document.createElement('a');
+                                card.href = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
+                                card.target = '_blank';
+                                card.className = 'group bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 cursor-pointer';
                                 
-                                // Dynamic Date Formatting (Italian: 10 apr 2026)
-                                let displayDate = '';
+                                // Dynamic Date Formatting
+                                let displayDate = 'Post recente';
                                 if (post.date) {
                                     try {
                                         const d = new Date(post.date);
                                         if (!isNaN(d.getTime())) {
-                                            displayDate = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }).replace('.', '');
+                                            displayDate = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' });
                                         }
                                     } catch (e) {}
                                 }
 
-                                // Header: Authentic LinkedIn Style
+                                // Header: Minimalist with World Icon
                                 const headerHtml = `
                                     <div class="p-4 flex items-center gap-3">
-                                        <div class="w-10 h-10 bg-[#0077b5] rounded flex items-center justify-center shrink-0 shadow-sm">
+                                        <div class="w-10 h-10 bg-[#0077b5] rounded flex items-center justify-center shrink-0">
                                             <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                                         </div>
                                         <div class="flex flex-col">
@@ -277,58 +279,55 @@
                                                 <svg class="w-2.5 h-2.5 text-gray-400 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
                                             </div>
                                         </div>
-                                        <a href="${post.url}" target="_blank" class="absolute inset-x-0 top-0 h-16 z-10"></a>
                                     </div>
                                 `;
 
-                                // Lab Text with "More" functionality logic (CSS based)
+                                // Lab Text Content
                                 const bodyHtml = `
-                                    <div class="px-4 pb-3 relative z-20">
-                                        <p class="text-gray-800 text-[13.5px] leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-300">
-                                            ${post.text}
-                                        </p>
+                                    <div class="px-4 pb-3">
+                                        <p class="text-gray-800 text-sm leading-relaxed line-clamp-4">${post.text}</p>
                                     </div>
                                 `;
 
-                                // Intelligent Content Logic
-                                let contentHtml = '';
-                                
-                                // CASE A: Article Box (Priority)
-                                if (post.article) {
-                                    const artImg = post.article.image ? `
-                                        <div class="w-full aspect-video overflow-hidden border-b border-[#e0e0e0] bg-white">
-                                            <img src="${post.article.image}" class="w-full h-full object-cover" loading="lazy">
-                                        </div>
-                                    ` : '';
-                                    contentHtml = `
-                                        <a href="${post.article.link}" target="_blank" class="mx-4 mb-4 border border-[#e0e0e0] rounded-lg overflow-hidden bg-[#f9f9f9] transition-colors hover:bg-gray-100 block relative z-30">
-                                            ${artImg}
-                                            <div class="p-3">
-                                                <p class="text-gray-900 font-bold text-xs line-clamp-2">${post.article.title}</p>
-                                                <p class="text-gray-400 text-[10px] uppercase tracking-wider mt-1">Sito Esterno / LinkedIn Articolo</p>
-                                            </div>
-                                        </a>
-                                    `;
-                                } 
-                                // CASE B: Main Image
-                                else if (post.image_url) {
-                                    contentHtml = `
-                                        <div class="w-full bg-gray-50 border-y border-gray-100 aspect-video overflow-hidden relative z-20">
+                                // Case 1: Direct Image (if no repost exists)
+                                let mainImageHtml = '';
+                                if (!post.repost && post.image_url) {
+                                    mainImageHtml = `
+                                        <div class="w-full bg-gray-50 border-y border-gray-100 aspect-video overflow-hidden">
                                             <img src="${post.image_url}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
-                                            <a href="${post.url}" target="_blank" class="absolute inset-0"></a>
                                         </div>
                                     `;
                                 }
 
-                                card.innerHTML = headerHtml + bodyHtml + contentHtml;
+                                // Case 2: Repost Box (Article/Link Style)
+                                let repostHtml = '';
+                                if (post.repost) {
+                                    const imgHtml = post.repost.img ? `
+                                        <div class="w-full aspect-video border-b border-gray-100 overflow-hidden bg-gray-50">
+                                            <img src="${post.repost.img}" class="w-full h-full object-cover" loading="lazy">
+                                        </div>
+                                    ` : '';
+
+                                    repostHtml = `
+                                        <div class="mx-4 mb-4 border border-[#e0e0e0] rounded-lg overflow-hidden bg-gray-50/20">
+                                            ${imgHtml}
+                                            <div class="p-3">
+                                                <p class="text-gray-900 font-bold text-xs line-clamp-2">${post.repost.title}</p>
+                                                <p class="text-gray-400 text-[10px] uppercase tracking-wider mt-1">LinkedIn Article</p>
+                                            </div>
+                                        </div>
+                                    `;
+                                }
+
+                                card.innerHTML = headerHtml + bodyHtml + mainImageHtml + repostHtml;
                                 container.appendChild(card);
                             });
 
                         } catch (err) {
                             console.error("Errore fetch posts:", err);
                             container.innerHTML = `
-                                <div class="col-span-full text-center py-12 border border-gray-100 rounded-xl bg-white shadow-sm">
-                                    <p class="text-gray-400 italic"> LinkedIn updates are currently tucked away.</p>
+                                <div class="text-center py-12 border border-gray-700/50 rounded-lg bg-[#22272d]">
+                                    <p class="text-gray-400">Si è verificato un errore durante il caricamento del feed.</p>
                                 </div>
                             `;
                         }
