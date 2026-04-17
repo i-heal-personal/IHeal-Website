@@ -77,11 +77,16 @@
     <!-- Header -->
     <header class="relative pt-40 pb-20 px-6 md:px-12 text-center md:text-left overflow-hidden mb-16">
         <div class="absolute inset-0 z-0">
-            <img src="assets/images/campus/Flemingsberg_webb-2.jpg" alt="Campus Background" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-kth-dark/75"></div>
+            <!-- Brighter, desaturated image for a colder feel -->
+            <img src="assets/images/campus/Flemingsberg_webb-2.webp" alt="Campus Background"
+                class="w-full h-full object-cover filter brightness-[1.3] contrast-[1.1] saturate-20">
+            <!-- Cool blue tint overlay paired with reduced dark opacity -->
+            <div class="absolute inset-0 bg-blue-900/20 mix-blend-color"></div>
+            <div class="absolute inset-0 bg-kth-dark/50"></div>
         </div>
         <div class="container mx-auto relative z-10">
-            <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4 font-heading">Join Our Team
+            <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4 font-heading">Join Our
+                Team
             </h1>
             <div class="w-12 h-1 bg-kth-cerulean mx-auto md:mx-0 mb-8"></div>
         </div>
@@ -89,38 +94,56 @@
 
     <!-- Opportunities & Contact Section -->
     <section class="container mx-auto px-6 md:px-12 pb-32 grid lg:grid-cols-2 gap-16 items-start">
-        
+
         <!-- Opportunities Info -->
         <div class="space-y-12">
             <!-- PostDocs -->
             <div>
-                <h2 class="text-xl text-white font-light tracking-widest uppercase mb-4 font-heading border-b border-gray-800 pb-2">PostDocs</h2>
+                <h2
+                    class="text-xl text-white font-light tracking-widest uppercase mb-4 font-heading border-b border-gray-800 pb-2">
+                    PostDocs</h2>
                 <p class="text-white font-light leading-relaxed text-sm">
-                    Contact us to apply for competitive research funding through the <span class="text-kth-cerulean font-semibold">Marie Curie</span> or <span class="text-kth-cerulean font-semibold">Digital Futures Fellowship</span>, among other opportunities.
+                    Contact us to apply for competitive research funding through the <span
+                        class="text-kth-cerulean font-semibold">Marie Curie</span> or <span
+                        class="text-kth-cerulean font-semibold">Digital Futures Fellowship</span>, among other
+                    opportunities.
                 </p>
             </div>
-            
+
             <!-- PhD Students -->
             <div>
-                <h2 class="text-xl text-white font-light tracking-widest uppercase mb-4 font-heading border-b border-gray-800 pb-2">PhD Students</h2>
+                <h2
+                    class="text-xl text-white font-light tracking-widest uppercase mb-4 font-heading border-b border-gray-800 pb-2">
+                    PhD Students</h2>
                 <p class="text-white font-light leading-relaxed text-sm">
-                    Please keep an eye on our <a href="https://www.linkedin.com/company/intelligent-heart-technology-lab/" target="_blank" class="text-kth-cerulean underline hover:text-white transition">LinkedIn page</a> for upcoming openings and official announcements.
+                    Please keep an eye on our <a
+                        href="https://www.linkedin.com/company/intelligent-heart-technology-lab/" target="_blank"
+                        class="text-kth-cerulean underline hover:text-white transition">LinkedIn page</a> for upcoming
+                    openings and official announcements.
                 </p>
             </div>
-            
+
             <!-- BSc, MSc Students -->
             <div>
-                <h2 class="text-xl text-white font-light tracking-widest uppercase mb-4 font-heading border-b border-gray-800 pb-2">BSc & MSc Students</h2>
+                <h2
+                    class="text-xl text-white font-light tracking-widest uppercase mb-4 font-heading border-b border-gray-800 pb-2">
+                    BSc & MSc Students</h2>
                 <p class="text-white font-light leading-relaxed text-sm mb-12">
-                    Please contact us if you are a highly motivated and independent student for BSc, MSc or internship projects in cardiovascular technology. Provide your CV and a brief motivation stating how your background aligns with our vision. See our previous students <a href="people.html#student-projects" class="text-kth-cerulean underline hover:text-white transition font-medium">here</a>.
+                    Please contact us if you are a highly motivated and independent student for BSc, MSc or internship
+                    projects in cardiovascular technology. Provide your CV and a brief motivation stating how your
+                    background aligns with our vision. See our previous students <a href="people.html#student-projects"
+                        class="text-kth-cerulean underline hover:text-white transition font-medium">here</a>.
                 </p>
 
                 <!-- Horizontal Map Card -->
                 <div class="bg-white rounded overflow-hidden shadow-2xl flex flex-col sm:flex-row mt-8">
-                    <img src="assets/images/campus/Utegard_Flemingsberg_2019_09_24.jpg" alt="KTH Exterior" class="w-full sm:w-2/5 object-cover h-48 sm:h-auto">
+                    <img src="assets/images/campus/Utegard_Flemingsberg_2019_09_24.webp" alt="KTH Exterior"
+                        class="w-full sm:w-2/5 object-cover h-48 sm:h-auto">
                     <div class="p-6 text-left flex-1 flex flex-col justify-center">
-                        <h3 class="text-black font-bold text-xl mb-2 font-heading leading-tight">KTH Flemingsberg on<br>Google Maps</h3>
-                        <a href="https://www.google.com/maps/search/?api=1&query=KTH+FlemingsBERG+Hälsovägen+11" target="_blank" class="text-kth-cerulean text-[1rem] underline hover:text-black transition">
+                        <h3 class="text-black font-bold text-xl mb-2 font-heading leading-tight">KTH Flemingsberg
+                            on<br>Google Maps</h3>
+                        <a href="https://www.google.com/maps/search/?api=1&query=KTH+FlemingsBERG+Hälsovägen+11"
+                            target="_blank" class="text-kth-cerulean text-[1rem] underline hover:text-black transition">
                             KTH Flemingsberg:<br>Hälsovägen 11
                         </a>
                     </div>

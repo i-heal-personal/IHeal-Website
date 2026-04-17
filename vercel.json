@@ -1,4 +1,10 @@
 {
     "cleanUrls": true,
-    "trailingSlash": false
+    "trailingSlash": false,
+    "crons": [
+        {
+            "path": "/api/cron/fetch-posts",
+            "schedule": "0 9 * * 1"
+        }
+    ]
 }

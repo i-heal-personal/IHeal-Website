@@ -82,41 +82,40 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop"
-                alt="Lab Background" class="w-full h-full object-cover opacity-20 filter grayscale contrast-125">
-            <div class="absolute inset-0 bg-gradient-to-b from-kth-dark/80 via-transparent to-kth-dark"></div>
-        </div>
+    <section class="relative min-h-screen pt-32 pb-20 bg-kth-dark overflow-hidden flex flex-col justify-center">
 
-        <div class="relative z-10 text-center max-w-5xl mx-auto mt-[-10vh]">
-            <h1 class="text-6xl md:text-8xl font-thin tracking-tighter mb-4 text-white">
+        <!-- Top Left Title -->
+        <div class="container mx-auto px-12 relative z-20 mb-[2vh] md:mb-[5vh] pt-12 md:pt-0">
+            <h1 class="text-6xl md:text-[7rem] font-thin tracking-tighter mb-4 text-white font-heading leading-none">
                 I-HeaL
             </h1>
-            <p
-                class="text-xl md:text-2xl font-light tracking-[0.15em] text-white uppercase mb-16 border-b border-gray-800 inline-block pb-6 px-12">
+            <p class="text-xl md:text-2xl font-light tracking-[0.15em] text-white uppercase inline-block font-heading border-b border-gray-800 pb-4">
                 Intelligent Heart Technology Lab
             </p>
-
-            <div class="text-lg md:text-2xl font-light leading-relaxed max-w-4xl mx-auto text-white">
-                We are motivated by clinical needs which we address with a variety of intelligent technological
-                solutions. In turn, our approach allows us to improve understanding of system-level cardiovascular
-                physiology.
-            </div>
-
-            <!-- Heart Illustration -->
-            <div
-                class="mt-8 max-w-lg mx-auto opacity-20 hover:opacity-50 transition duration-1000 select-none pointer-events-none">
-                <img src="assets/images/heart_illustration.png" alt="Heart Illustration" class="w-full h-auto">
-            </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3">
-                </path>
-            </svg>
+        <!-- Container for interlocking pills -->
+        <div class="relative w-full h-[550px] md:h-[650px]">
+            
+            <!-- Top Image Pill -->
+            <div class="absolute top-0 right-0 w-[95%] md:w-[85%] h-[350px] md:h-[450px] bg-gray-800 rounded-l-full overflow-hidden z-0">
+                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop"
+                    alt="Lab Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-kth-dark/20 mix-blend-multiply"></div>
+            </div>
+            
+            <!-- Bottom Gradient Pill -->
+            <div class="absolute bottom-0 left-0 w-[95%] md:w-[80%] h-[300px] md:h-[400px] bg-gradient-to-r from-[#003b50] to-kth-cerulean rounded-r-[150px] md:rounded-r-full flex flex-col justify-center text-left z-10 shadow-2xl px-8 md:px-24 border border-white/5 border-l-0">
+                <div class="max-w-[85vw] md:max-w-[65vw]">
+                    <p class="text-white/80 text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4 font-heading">What We Do</p>
+                    <div class="text-xl md:text-2xl lg:text-4xl text-white font-light leading-snug font-heading max-w-4xl drop-shadow-md">
+                        We are motivated by clinical needs which we address with a variety of intelligent technological solutions. In turn, our approach allows us to improve understanding of system-level cardiovascular physiology.
+                    </div>
+                </div>
+            </div>
+            
         </div>
+
     </section>
 
     <!-- Main Navigation Grid / Tabs -->
@@ -216,9 +215,64 @@
                     </a>
                 </div>
 
-                <!-- SociableKIT Widget -->
-                <div class="sk-ww-linkedin-page-post" data-embed-id="25673477"></div><script src="https://widgets.sociablekit.com/linkedin-page-posts/widget.js" defer></script>
+                <!-- Custom LinkedIn Feed Container -->
+                <div id="custom-linkedin-feed" class="p-6 md:p-8 space-y-6 max-h-[600px] overflow-y-auto bg-[#1b1f23]">
+                    <div class="flex justify-center py-12">
+                        <div class="animate-pulse flex flex-col items-center">
+                            <div class="w-8 h-8 border-4 border-kth-cerulean border-t-transparent rounded-full animate-spin mb-4"></div>
+                            <p class="text-gray-400 text-sm">Caricamento post da LinkedIn...</p>
+                        </div>
+                    </div>
+                </div>
 
+                <script>
+                    document.addEventListener('DOMContentLoaded', async () => {
+                        const container = document.getElementById('custom-linkedin-feed');
+                        try {
+                            const res = await fetch('/api/get-posts');
+                            const data = await res.json();
+
+                            container.innerHTML = ''; // Clear loading state
+
+                            if (!res.ok || !data.success || !data.posts || data.posts.length === 0) {
+                                // Graceful Fallback
+                                container.innerHTML = `
+                                    <div class="text-center py-12 border border-gray-700/50 rounded-lg bg-[#22272d]">
+                                        <p class="text-gray-400 mb-4">I post recenti non sono al momento disponibili.</p>
+                                        <a href="https://www.linkedin.com/company/intelligent-heart-technology-lab/" target="_blank" 
+                                           class="inline-block px-6 py-2 bg-[#0077b5] text-white rounded font-medium hover:bg-[#005582] transition">
+                                            Visita il nostro LinkedIn
+                                        </a>
+                                    </div>
+                                `;
+                                return;
+                            }
+
+                            // Render posts in beautiful cards
+                            data.posts.forEach((post, index) => {
+                                const card = document.createElement('div');
+                                card.className = 'bg-[#22272d] border border-gray-700/50 rounded-lg p-5 shadow-sm hover:border-gray-500 transition-colors';
+                                
+                                // Format date nicely (fallbacks handle extracted string)
+                                const dateSpan = post.date ? `<span class="text-xs text-gray-400 mb-2 block font-mono">${post.date}</span>` : '';
+                                
+                                card.innerHTML = `
+                                    ${dateSpan}
+                                    <p class="text-gray-200 text-sm leading-relaxed whitespace-pre-wrap break-words">${post.text}</p>
+                                `;
+                                container.appendChild(card);
+                            });
+
+                        } catch (err) {
+                            console.error("Errore fetch posts:", err);
+                            container.innerHTML = `
+                                <div class="text-center py-12 border border-gray-700/50 rounded-lg bg-[#22272d]">
+                                    <p class="text-gray-400">Si è verificato un errore durante il caricamento del feed.</p>
+                                </div>
+                            `;
+                        }
+                    });
+                </script>
             </div>
         </div>
     </section>
