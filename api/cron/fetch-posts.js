@@ -26,7 +26,6 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
-        // 2. Mapping ultra-robusto con Repost e Documenti
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
             // URL Pubblico
             let publicUrl = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
@@ -37,53 +36,56 @@ export default async function handler(req, res) {
                 }
             }
 
-            // Selezione Immagine Massima Qualità
+            // Selezione Immagine Massima Qualità (Main Post)
             const imagesArray = post.content?.images?.[0]?.image || post.image || [];
             const bestImage = [...imagesArray].sort((a, b) => (b.width || 0) - (a.width || 0))[0];
             const img = bestImage?.url || null;
 
-            // Avatar
+            // Avatar Lab
             const avatars = post.author?.avatar || [];
             const avatar = avatars[avatars.length - 1]?.url || null;
 
-            // --- REPOST / ARTICLE / DOCUMENT DATA ---
-            let resharedData = null;
+            // --- GESTIONE REPOST / ARTICLE / VIDEO / DOCUMENT ---
+            let reshared_content = null;
             
-            // Priority 1: Classic Reshared Post
+            // 1. Check for real reshared post
             if (post.reshared_post) {
-                resharedData = {
-                    author: post.reshared_post.author?.name || 'LinkedIn User',
-                    text: post.reshared_post.text || '',
-                    url: post.reshared_post.url || null
+                const inner = post.reshared_post;
+                const innerImgs = inner.content?.images?.[0]?.image || inner.image || [];
+                const innerBestImg = [...innerImgs].sort((a, b) => (b.width || 0) - (a.width || 0))[0]?.url || null;
+                
+                reshared_content = {
+                    author_name: inner.author?.name || 'LinkedIn User',
+                    text: inner.text || '',
+                    image_url: innerBestImg
                 };
             } 
-            // Priority 2: Article or Document in Content
-            else if (post.content?.article || post.content?.document) {
-                const item = post.content.article || post.content.document;
-                resharedData = {
-                    author: item.source || 'External Source',
-                    text: item.title || '',
-                    url: item.url || null,
-                    isExternal: true
+            // 2. Check for nested article/document/video
+            else if (post.content?.article || post.content?.document || post.content?.video) {
+                const item = post.content.article || post.content.document || post.content.video;
+                reshared_content = {
+                    author_name: item.source || item.provider || 'External Resource',
+                    text: item.title || item.description || '',
+                    image_url: img, // In articles, the main img is often the article preview
+                    is_article: true,
+                    domain: item.source || ''
                 };
             }
 
             return {
                 text: post.text || '',
                 date: post.created_at, 
-                image_url: img,
+                image_url: (reshared_content ? null : img), // If repost, move image inside
                 avatar_url: avatar,
                 url: publicUrl,
-                reshared_data: resharedData
+                reshared_content: reshared_content
             };
         });
 
         if (mappedPosts.length > 0) {
-            console.log('Mapping completed with reshared data support. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
-            console.warn('0 posts found.');
             return res.status(200).json({ success: true, count: 0, preserved: true });
         }
 
