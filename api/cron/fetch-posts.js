@@ -26,9 +26,9 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
-        // 2. Exact Mapping based on verified JSON structure
+        // 2. Precise Mapping based on latest JSON inspection
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
-            // Public URL Cleanup
+            // URL: Use post.url directly if it exists, otherwise sanitizing
             let publicUrl = post.url || post.post_url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
             if (publicUrl.includes('/admin/')) {
                 const urnMatch = publicUrl.match(/activity:(\d+)/);
@@ -39,26 +39,26 @@ export default async function handler(req, res) {
                 }
             }
 
-            // Image extraction: post.content.images[0].url
+            // Image: post.image[0].url
             let img = null;
-            if (post.content && post.content.images && Array.isArray(post.content.images) && post.content.images.length > 0) {
-                img = post.content.images[0].url || null;
+            if (post.image && Array.isArray(post.image) && post.image.length > 0) {
+                img = post.image[0].url || null;
             }
 
             return {
                 text: post.text || '',
-                date: post.created_at || null, 
+                date: post.created_at || null, // Individual date for each post
                 image_url: img,
                 url: publicUrl
             };
         });
 
         if (mappedPosts.length > 0) {
-            console.log('Mapping completed with verified structure. Updating KV.');
+            console.log('Final refined mapping completed. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
-            console.warn('API returned 0 posts.');
+            console.warn('0 posts found.');
             return res.status(200).json({ success: true, count: 0, preserved: true });
         }
 
