@@ -26,66 +26,27 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
+        // 2. Mapping preciso come da schema RapidAPI verificato
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
-            // URL Pubblico
-            let publicUrl = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
-            if (publicUrl.includes('/admin/')) {
-                const activityId = publicUrl.split('activity:')[1]?.split('/')[0];
-                if (activityId) {
-                    publicUrl = `https://www.linkedin.com/feed/update/urn:li:activity:${activityId}`;
-                }
-            }
-
-            // Selezione Immagine Massima Qualità (Main Post)
-            const imagesArray = post.content?.images?.[0]?.image || post.image || [];
-            const bestImage = [...imagesArray].sort((a, b) => (b.width || 0) - (a.width || 0))[0];
-            const img = bestImage?.url || null;
-
-            // Avatar Lab
-            const avatars = post.author?.avatar || [];
-            const avatar = avatars[avatars.length - 1]?.url || null;
-
-            // --- GESTIONE REPOST / ARTICLE / VIDEO / DOCUMENT ---
-            let reshared_content = null;
-            
-            // 1. Check for real reshared post
-            if (post.reshared_post) {
-                const inner = post.reshared_post;
-                const innerImgs = inner.content?.images?.[0]?.image || inner.image || [];
-                const innerBestImg = [...innerImgs].sort((a, b) => (b.width || 0) - (a.width || 0))[0]?.url || null;
-                
-                reshared_content = {
-                    author_name: inner.author?.name || 'LinkedIn User',
-                    text: inner.text || '',
-                    image_url: innerBestImg
-                };
-            } 
-            // 2. Check for nested article/document/video
-            else if (post.content?.article || post.content?.document || post.content?.video) {
-                const item = post.content.article || post.content.document || post.content.video;
-                reshared_content = {
-                    author_name: item.source || item.provider || 'External Resource',
-                    text: item.title || item.description || '',
-                    image_url: img, // In articles, the main img is often the article preview
-                    is_article: true,
-                    domain: item.source || ''
-                };
-            }
-
             return {
                 text: post.text || '',
-                date: post.created_at, 
-                image_url: (reshared_content ? null : img), // If repost, move image inside
-                avatar_url: avatar,
-                url: publicUrl,
-                reshared_content: reshared_content
+                date: post.created_at, // ISO string da API
+                image_url: post.content?.images?.[0]?.image?.[0]?.url || null,
+                repost: post.content?.article ? { 
+                    title: post.content.article.title, 
+                    link: post.content.article.original_url,
+                    img: post.content.article.thumbnail?.[0]?.url 
+                } : null,
+                url: post.url
             };
         });
 
         if (mappedPosts.length > 0) {
+            console.log('Final precise mapping completed. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
+            console.warn('0 posts found.');
             return res.status(200).json({ success: true, count: 0, preserved: true });
         }
 
