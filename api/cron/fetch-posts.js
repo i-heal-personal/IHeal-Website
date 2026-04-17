@@ -8,6 +8,7 @@ export default async function handler(req, res) {
     }
 
     try {
+        // Double-checked endpoint and params
         const url = 'https://linkedin-data-api.p.rapidapi.com/get-company-posts?username=intelligent-heart-technology-lab';
         
         console.log('Fetching LinkedIn data via RapidAPI...');
@@ -26,35 +27,48 @@ export default async function handler(req, res) {
 
         const result = await response.json();
         
-        // RapidAPI usually returns data in a 'data' array or similar. 
-        // Based on typical LinkedIn Data API responses:
-        const rawPosts = result.data || result.results || [];
+        // --- DEBUG LOG ---
+        console.log('Raw API Response (Snippet):', JSON.stringify(result).substring(0, 700));
+
+        // 2. Flexible data extraction
+        // Checks various common patterns in RapidAPI responses (top-level array, .data.results, .data, .results)
+        let rawPosts = [];
+        if (Array.isArray(result)) {
+            rawPosts = result;
+        } else if (result.data && Array.isArray(result.data)) {
+            rawPosts = result.data;
+        } else if (result.results && Array.isArray(result.results)) {
+            rawPosts = result.results;
+        } else if (result.data && result.data.results && Array.isArray(result.data.results)) {
+            rawPosts = result.data.results;
+        } else if (result.data && result.data.data && Array.isArray(result.data.data)) {
+            rawPosts = result.data.data;
+        }
         
-        // 2. Mapping the data cleanly
+        // 3. Robust mapping with fallbacks for different key names
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
             return {
-                text: post.text || post.commentary || '',
-                date: post.postDate || post.postedAt || 'Recent',
-                image: post.image || (post.images && post.images.length > 0 ? post.images[0] : null)
+                text: post.text || post.commentary || post.description || post.text_content || '',
+                date: post.postDate || post.postedAt || post.timeDescription || 'Recent',
+                image: post.image || post.mainImage || (post.images && post.images.length > 0 ? post.images[0] : null)
             };
         });
 
         if (mappedPosts.length > 0) {
-            console.log(`Successfully fetched ${mappedPosts.length} posts. Updating KV.`);
+            console.log(`Successfully mapped ${mappedPosts.length} posts. Updating KV.`);
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
         } else {
-            console.warn('No posts found in API response. Preserving old data.');
+            console.warn('CRITICAL: No posts could be extracted from JSON. Check logs for response structure.');
         }
 
         return res.status(200).json({ 
             success: true, 
             count: mappedPosts.length,
-            message: mappedPosts.length > 0 ? 'KV Updated' : 'No changes made'
+            debug_snippet: JSON.stringify(result).substring(0, 200)
         });
 
     } catch (error) {
-        console.error('RapidAPI Fetch Error:', error.message);
-        // Important: Still return 200/success to keep Cron from failing, but log error
+        console.error('RapidAPI Error:', error.message);
         return res.status(200).json({ 
             success: false, 
             error: error.message,
