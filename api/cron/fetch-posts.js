@@ -26,27 +26,47 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
-        // 2. Mapping preciso come da schema RapidAPI verificato
+        // 2. Mapping Intelligente basato su Priorità Contenuto
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
+            // Data Reale (Prendi ISO string)
+            const realDate = post.created_at;
+
+            // CASO A: Articolo / Repost
+            let articleBox = null;
+            if (post.content?.article) {
+                const art = post.content.article;
+                // Trova thumbnail migliore
+                const thumbs = art.thumbnail || [];
+                const bestThumb = [...thumbs].sort((a, b) => (b.width || 0) - (a.width || 0))[0]?.url || null;
+                
+                articleBox = {
+                    title: art.title || '',
+                    link: art.original_url || post.url,
+                    image: bestThumb
+                };
+            }
+
+            // CASO B: Immagini / Carosello (se non c'è articolo)
+            let mainImage = null;
+            if (!articleBox && post.content?.images) {
+                const imgs = post.content.images[0]?.image || [];
+                mainImage = [...imgs].sort((a, b) => (b.width || 0) - (a.width || 0))[0]?.url || null;
+            }
+
             return {
                 text: post.text || '',
-                date: post.created_at, // ISO string da API
-                image_url: post.content?.images?.[0]?.image?.[0]?.url || null,
-                repost: post.content?.article ? { 
-                    title: post.content.article.title, 
-                    link: post.content.article.original_url,
-                    img: post.content.article.thumbnail?.[0]?.url 
-                } : null,
+                date: realDate,
+                image_url: mainImage,
+                article: articleBox,
                 url: post.url
             };
         });
 
         if (mappedPosts.length > 0) {
-            console.log('Final precise mapping completed. Updating KV.');
+            console.log('Intelligent content mapping completed. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
-            console.warn('0 posts found.');
             return res.status(200).json({ success: true, count: 0, preserved: true });
         }
 
