@@ -250,7 +250,7 @@
 
                             data.posts.forEach((post) => {
                                 const card = document.createElement('a');
-                                card.href = 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
+                                card.href = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
                                 card.target = '_blank';
                                 card.className = 'group bg-[#f9fafb] border border-gray-200 rounded-xl overflow-hidden flex flex-col shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer';
                                 
@@ -261,11 +261,21 @@
                                             <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                                         </div>
                                         <div class="flex flex-col">
-                                            <span class="text-gray-900 font-bold text-xs uppercase tracking-tight">I-HeaL Lab</span>
+                                            <span class="text-gray-900 font-bold text-[10px] uppercase tracking-tight">Intelligent Heart Technology Lab</span>
                                             <span class="text-gray-400 text-[10px] uppercase tracking-wider">${post.date || 'Recent'}</span>
                                         </div>
                                     </div>
                                 `;
+
+                                // Image: Above text if exists
+                                const hasImage = post.image_url && post.image_url !== 'null';
+                                const imageHtml = hasImage ? `
+                                    <div class="px-5 pt-5">
+                                        <div class="rounded-lg overflow-hidden border border-gray-100 aspect-video">
+                                            <img src="${post.image_url}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" onerror="this.parentElement.parentElement.style.display='none'">
+                                        </div>
+                                    </div>
+                                ` : '';
 
                                 // Body: Text with line-clamp
                                 const bodyHtml = `
@@ -274,16 +284,7 @@
                                     </div>
                                 `;
 
-                                // Image: Below text if exists
-                                const imageHtml = post.image ? `
-                                    <div class="px-5 pb-5">
-                                        <div class="rounded-lg overflow-hidden border border-gray-100 aspect-video">
-                                            <img src="${post.image}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" loading="lazy">
-                                        </div>
-                                    </div>
-                                ` : '';
-
-                                card.innerHTML = headerHtml + bodyHtml + imageHtml;
+                                card.innerHTML = headerHtml + imageHtml + bodyHtml;
                                 container.appendChild(card);
                             });
 
