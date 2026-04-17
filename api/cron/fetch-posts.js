@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
-        // 2. Mapping con Selezione Alta Qualità per le Immagini
+        // 2. Mapping con Ordinamento per Massima Risoluzione
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
             // Fix Link: Trasforma link admin in link pubblici
             let publicUrl = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
@@ -37,17 +37,15 @@ export default async function handler(req, res) {
                 }
             }
 
-            // Selezione Alta Qualità: Cerchiamo la risoluzione migliore
-            const imagesArray = post.content?.images?.[0]?.image || [];
-            const bestImage = imagesArray.find(img => img.width === 800) || 
-                              imagesArray.find(img => img.width === 1280) ||
-                              imagesArray[imagesArray.length - 1]; 
-
+            // Selezione Intelligente: Ordina per larghezza (dalla più grande alla più piccola)
+            const imagesArray = post.content?.images?.[0]?.image || post.image || [];
+            const bestImage = [...imagesArray].sort((a, b) => (b.width || 0) - (a.width || 0))[0];
             const img = bestImage?.url || null;
 
-            // Fix Avatar: Logo del Lab (versione alta qualità se possibile)
+            // Fix Avatar: Logo del Lab (sempre la risoluzione più alta)
             const avatars = post.author?.avatar || [];
-            const avatar = avatars[avatars.length - 1]?.url || null;
+            const bestAvatar = [...avatars].sort((a, b) => (b.width || 0) - (a.width || 0))[0];
+            const avatar = bestAvatar?.url || null;
 
             return {
                 text: post.text || '',
@@ -59,7 +57,7 @@ export default async function handler(req, res) {
         });
 
         if (mappedPosts.length > 0) {
-            console.log('High-quality image mapping completed. Updating KV.');
+            console.log('Maximum resolution mapping completed. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
