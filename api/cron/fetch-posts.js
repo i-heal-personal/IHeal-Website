@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
-        // 2. Mapping con i percorsi JSON verificati
+        // 2. Mapping con Selezione Alta Qualità per le Immagini
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
             // Fix Link: Trasforma link admin in link pubblici
             let publicUrl = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
@@ -37,17 +37,21 @@ export default async function handler(req, res) {
                 }
             }
 
-            // Fix Immagine: Percorso esteso verificato
-            const img = post.content?.images?.[0]?.image?.[0]?.url || 
-                        post.image?.[0]?.url || 
-                        null;
+            // Selezione Alta Qualità: Cerchiamo la risoluzione migliore
+            const imagesArray = post.content?.images?.[0]?.image || [];
+            const bestImage = imagesArray.find(img => img.width === 800) || 
+                              imagesArray.find(img => img.width === 1280) ||
+                              imagesArray[imagesArray.length - 1]; 
 
-            // Fix Avatar: Logo del Lab
-            const avatar = post.author?.avatar?.[0]?.url || null;
+            const img = bestImage?.url || null;
+
+            // Fix Avatar: Logo del Lab (versione alta qualità se possibile)
+            const avatars = post.author?.avatar || [];
+            const avatar = avatars[avatars.length - 1]?.url || null;
 
             return {
                 text: post.text || '',
-                date: post.created_at, // Salvato esattamente come fornito dall'API
+                date: post.created_at, 
                 image_url: img,
                 avatar_url: avatar,
                 url: publicUrl
@@ -55,7 +59,7 @@ export default async function handler(req, res) {
         });
 
         if (mappedPosts.length > 0) {
-            console.log('Final verified mapping completed. Updating KV.');
+            console.log('High-quality image mapping completed. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
