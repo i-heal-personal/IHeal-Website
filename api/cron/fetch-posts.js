@@ -26,7 +26,7 @@ export default async function handler(req, res) {
         const result = await response.json();
         const rawPosts = result.data || [];
         
-        // 2. Mapping ultra-robusto
+        // 2. Mapping con i percorsi JSON verificati
         const mappedPosts = rawPosts.slice(0, 15).map(post => {
             // Fix Link: Trasforma link admin in link pubblici
             let publicUrl = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
@@ -37,17 +37,17 @@ export default async function handler(req, res) {
                 }
             }
 
-            // Fix Immagine: Cerca in ogni possibile posizione del JSON
-            const img = post.image?.[0]?.url || 
-                        post.content?.images?.[0]?.url || 
-                        post.post_image || null;
+            // Fix Immagine: Percorso esteso verificato
+            const img = post.content?.images?.[0]?.image?.[0]?.url || 
+                        post.image?.[0]?.url || 
+                        null;
 
-            // Fix Avatar: Prendi il logo del Lab
+            // Fix Avatar: Logo del Lab
             const avatar = post.author?.avatar?.[0]?.url || null;
 
             return {
                 text: post.text || '',
-                date: post.created_at, // ISO string corretta
+                date: post.created_at, // Salvato esattamente come fornito dall'API
                 image_url: img,
                 avatar_url: avatar,
                 url: publicUrl
@@ -55,7 +55,7 @@ export default async function handler(req, res) {
         });
 
         if (mappedPosts.length > 0) {
-            console.log('Ultra-robust mapping completed. Updating KV.');
+            console.log('Final verified mapping completed. Updating KV.');
             await kv.set('linkedin_posts', JSON.stringify(mappedPosts));
             return res.status(200).json({ success: true, count: mappedPosts.length });
         } else {
