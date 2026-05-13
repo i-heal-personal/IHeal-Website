@@ -52,7 +52,6 @@
         .font-heading {
             font-family: 'Figtree', sans-serif;
         }
-
     </style>
 </head>
 
@@ -96,32 +95,53 @@
             </p>
         </div>
 
-        <!-- Container for interlocking pills -->
-        <div class="relative w-full h-[550px] md:h-[650px]">
+        <!-- Hero Banner Section -->
+        <div
+            class="w-full h-[700px] md:h-[450px] flex flex-col md:flex-row bg-gradient-to-r from-[#003b50] to-kth-cerulean shadow-2xl">
 
-            <!-- Top Image Pill -->
+            <!-- Left Text Section -->
             <div
-                class="absolute top-0 right-0 w-[95%] md:w-[85%] h-[350px] md:h-[450px] bg-gray-800 rounded-l-full overflow-hidden z-0">
-                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop"
-                    alt="Lab Background" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-kth-dark/20 mix-blend-multiply"></div>
-            </div>
-
-            <!-- Bottom Gradient Pill -->
-            <div
-                class="absolute bottom-0 left-0 w-[95%] md:w-[80%] h-[300px] md:h-[400px] bg-gradient-to-r from-[#003b50] to-kth-cerulean rounded-r-[150px] md:rounded-r-full flex flex-col justify-center text-left z-10 shadow-2xl px-8 md:px-24 border border-white/5 border-l-0">
-                <div class="max-w-[85vw] md:max-w-[65vw]">
-                    <p class="text-white/80 text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4 font-heading">
-                        What We Do</p>
-                    <div
-                        class="text-xl md:text-2xl lg:text-4xl text-white font-light leading-snug font-heading max-w-4xl drop-shadow-md">
-                        We are motivated by clinical needs which we address with a variety of intelligent technological
-                        solutions. In turn, our approach allows us to improve understanding of system-level
-                        cardiovascular physiology.
-                    </div>
+                class="w-full md:w-[55%] h-[350px] md:h-full flex flex-col justify-center px-10 md:px-24 order-2 md:order-1">
+                <div
+                    class="text-2xl md:text-3xl lg:text-4xl text-white font-light leading-snug font-heading drop-shadow-md">
+                    We are motivated by clinical needs which we address with a variety of intelligent technological
+                    solutions. In turn, our approach allows us to improve understanding of system-level
+                    cardiovascular physiology.
                 </div>
             </div>
 
+            <!-- Right Image Section (Slideshow) -->
+            <div
+                class="relative w-full md:w-[45%] h-[350px] md:h-full bg-gray-900 slideshow-container overflow-hidden md:rounded-l-[150px] order-1 md:order-2 shadow-[-10px_0_30px_rgba(0,0,0,0.3)] z-10">
+                <!-- User: Add or replace images here. The script below will handle the crossfade transition. -->
+                <img src="assets/images/Mock_Loop.jpg" alt="Lab Background 1"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-100">
+                <img src="assets/images/IMG_1318.JPG" alt="Lab Background 2"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="assets/images/IMG_0576.jpg" alt="Lab Background 3"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="assets/images/Student_in_Lab.jpg" alt="Lab Background 4"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="assets/images/MRI.jpg" alt="Lab Background 5"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <div class="absolute inset-0 bg-kth-dark/10 mix-blend-multiply z-10 pointer-events-none"></div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const slides = document.querySelectorAll('.slideshow-container .slide');
+                    let currentSlide = 0;
+                    if (slides.length > 1) {
+                        setInterval(() => {
+                            slides[currentSlide].classList.remove('opacity-100');
+                            slides[currentSlide].classList.add('opacity-0');
+                            currentSlide = (currentSlide + 1) % slides.length;
+                            slides[currentSlide].classList.remove('opacity-0');
+                            slides[currentSlide].classList.add('opacity-100');
+                        }, 2500); // Crossfade every 2.5 seconds
+                    }
+                });
+            </script>
         </div>
 
     </section>
@@ -134,8 +154,8 @@
                 class="group relative block border-r border-gray-900 p-12 hover:bg-white/[0.02] transition-colors duration-500">
                 <div class="relative z-10 h-full flex flex-col justify-end">
                     <!-- Icon: Users -->
-                    <svg class="w-10 h-10 text-white mb-6 stroke-[1.5]" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-10 h-10 text-white mb-6 stroke-[1.5]" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
                         </path>
@@ -168,16 +188,16 @@
                     <div
                         class="w-12 h-px bg-gray-800 mb-6 group-hover:w-full group-hover:bg-kth-cerulean transition-all duration-700">
                     </div>
-                    <p class="text-sm text-gray-400 font-light leading-loose">Exploring robotics, computational modeling, and medical device innovation.</p>
+                    <p class="text-sm text-gray-400 font-light leading-loose">Exploring robotics, computational
+                        modeling, and medical device innovation.</p>
                 </div>
             </a>
 
-            <a href="join.html"
-                class="group relative block p-12 hover:bg-gray-900 transition-colors duration-500">
+            <a href="join.html" class="group relative block p-12 hover:bg-gray-900 transition-colors duration-500">
                 <div class="relative z-10 h-full flex flex-col justify-end">
                     <!-- Icon: UserPlus -->
-                    <svg class="w-10 h-10 text-white mb-6 stroke-[1.5]" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-10 h-10 text-white mb-6 stroke-[1.5]" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z">
                         </path>
@@ -206,8 +226,7 @@
             <div
                 class="bg-[#1b1f23] rounded-xl border border-gray-800 overflow-hidden shadow-2xl transition-all duration-500">
                 <!-- LinkedIn Header -->
-                <div
-                    class="p-6 md:p-8 flex items-center justify-between border-b border-gray-700/50 bg-[#1b1f23]">
+                <div class="p-6 md:p-8 flex items-center justify-between border-b border-gray-700/50 bg-[#1b1f23]">
                     <div class="flex items-center gap-4">
                         <div
                             class="w-14 h-14 bg-gray-800/50 border border-transparent rounded-md flex items-center justify-center shrink-0">
@@ -361,7 +380,8 @@
     <!-- Partners & Funding -->
     <section class="py-32 bg-kth-dark border-t border-gray-900 overflow-hidden relative transition-colors duration-500">
         <!-- Soft Glow Background (only visible in Dark Mode) -->
-        <div class="absolute inset-0 bg-kth-cerulean/5 blur-[100px] pointer-events-none opacity-0 dark:opacity-100"></div>
+        <div class="absolute inset-0 bg-kth-cerulean/5 blur-[100px] pointer-events-none opacity-0 dark:opacity-100">
+        </div>
 
         <div class="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
             <h4 class="text-white text-xl tracking-[0.3em] uppercase mb-16 text-center font-heading">
@@ -408,8 +428,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact"
-        class="bg-kth-dark py-20 border-t border-gray-900 transition-colors duration-500">
+    <footer id="contact" class="bg-kth-dark py-20 border-t border-gray-900 transition-colors duration-500">
         <div
             class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center">
             <div class="mb-12 md:mb-0">
