@@ -82,10 +82,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen pt-32 pb-20 bg-kth-dark overflow-hidden flex flex-col justify-center">
+    <section class="relative pt-32 pb-8 bg-kth-dark overflow-hidden flex flex-col justify-between">
 
-        <!-- Top Left Title -->
-        <div class="container mx-auto px-12 relative z-20 mb-[2vh] md:mb-[5vh] pt-12 md:pt-0">
+        <!-- Top Left Title & Vision -->
+        <div class="container mx-auto px-12 relative z-20 pt-12 md:pt-0">
             <h1 class="text-6xl md:text-[7rem] font-thin tracking-tighter mb-4 text-white font-heading leading-none">
                 I-HeaL
             </h1>
@@ -93,56 +93,52 @@
                 class="text-xl md:text-2xl font-light tracking-[0.15em] text-white uppercase inline-block font-heading border-b border-gray-800 pb-4">
                 Intelligent Heart Technology Lab
             </p>
+            <div
+                class="text-2xl md:text-3xl lg:text-4xl text-white/90 font-light leading-snug font-heading drop-shadow-md mt-10 max-w-6xl">
+                We are motivated by clinical needs which we address with a variety of intelligent technological
+                solutions. In turn, our approach allows us to improve understanding of system-level
+                cardiovascular physiology.
+            </div>
         </div>
 
-        <!-- Hero Banner Section -->
-        <div
-            class="w-full h-[700px] md:h-[450px] flex flex-col md:flex-row bg-gradient-to-r from-[#003b50] to-kth-cerulean shadow-2xl">
-
-            <!-- Left Text Section -->
-            <div
-                class="w-full md:w-[55%] h-[350px] md:h-full flex flex-col justify-center px-10 md:px-24 order-2 md:order-1">
-                <div
-                    class="text-2xl md:text-3xl lg:text-4xl text-white font-light leading-snug font-heading drop-shadow-md">
-                    We are motivated by clinical needs which we address with a variety of intelligent technological
-                    solutions. In turn, our approach allows us to improve understanding of system-level
-                    cardiovascular physiology.
-                </div>
-            </div>
-
-            <!-- Right Image Section (Slideshow) -->
-            <div
-                class="relative w-full md:w-[45%] h-[350px] md:h-full bg-gray-900 slideshow-container overflow-hidden md:rounded-l-[150px] order-1 md:order-2 shadow-[-10px_0_30px_rgba(0,0,0,0.3)] z-10">
-                <!-- User: Add or replace images here. The script below will handle the crossfade transition. -->
-                <img src="assets/images/Mock_Loop.jpg" alt="Lab Background 1"
+        <!-- Aligned Slideshow Container -->
+        <div class="container mx-auto px-12 relative z-10 mt-16">
+            <div class="relative w-full h-[400px] md:h-[600px] bg-gray-900 slideshow-container overflow-hidden rounded-xl shadow-2xl">
+                <img src="assets/images/highlight/Mock_Loop.jpg" alt="Mock Loop"
                     class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-100">
-                <img src="assets/images/IMG_1318.JPG" alt="Lab Background 2"
+                <img src="assets/images/highlight/Active_CLC.jpg" alt="Active CLC"
                     class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
-                <img src="assets/images/IMG_0576.jpg" alt="Lab Background 3"
+                <img src="assets/images/highlight/Co-design wearables.png" alt="Co-design Wearables"
                     class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
-                <img src="assets/images/Student_in_Lab.jpg" alt="Lab Background 4"
+                <img src="assets/images/highlight/Group_picture.JPG" alt="Group Picture"
                     class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
-                <img src="assets/images/MRI.jpg" alt="Lab Background 5"
+                <img src="assets/images/highlight/IMG_0576.jpg" alt="Lab Work"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="assets/images/highlight/Low-fi prototypes by older adults.png" alt="Low-fi Prototypes"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="assets/images/highlight/MRI.jpg" alt="MRI"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="assets/images/highlight/Student_in_Lab.jpg" alt="Student in Lab"
                     class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
                 <div class="absolute inset-0 bg-kth-dark/10 mix-blend-multiply z-10 pointer-events-none"></div>
             </div>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    const slides = document.querySelectorAll('.slideshow-container .slide');
-                    let currentSlide = 0;
-                    if (slides.length > 1) {
-                        setInterval(() => {
-                            slides[currentSlide].classList.remove('opacity-100');
-                            slides[currentSlide].classList.add('opacity-0');
-                            currentSlide = (currentSlide + 1) % slides.length;
-                            slides[currentSlide].classList.remove('opacity-0');
-                            slides[currentSlide].classList.add('opacity-100');
-                        }, 2500); // Crossfade every 2.5 seconds
-                    }
-                });
-            </script>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const slides = document.querySelectorAll('.slideshow-container .slide');
+                let currentSlide = 0;
+                if (slides.length > 1) {
+                    setInterval(() => {
+                        slides[currentSlide].classList.remove('opacity-100');
+                        slides[currentSlide].classList.add('opacity-0');
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        slides[currentSlide].classList.remove('opacity-0');
+                        slides[currentSlide].classList.add('opacity-100');
+                    }, 2500); // Crossfade every 2.5 seconds
+                }
+            });
+        </script>
 
     </section>
 
