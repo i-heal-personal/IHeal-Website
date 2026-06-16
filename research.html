@@ -88,21 +88,48 @@
 
         <!-- Tag Filter System -->
         <div class="mt-12 border-t border-gray-900 pt-8 text-center md:text-left">
-            <span class="text-xs uppercase tracking-widest text-gray-400 block mb-4 font-heading">Filter by tags (from Ongoing Projects):</span>
+            <span class="text-xs uppercase tracking-widest text-gray-400 block mb-4 font-heading">Filter by tags (from
+                Ongoing Projects):</span>
             <div id="tag-filters" class="flex flex-wrap justify-center md:justify-start gap-2.5">
-                <button id="tag-all" class="tag-btn active px-4 py-2 text-xs uppercase tracking-wider font-heading border border-kth-cerulean rounded-full bg-kth-cerulean text-white transition-all duration-300 cursor-pointer select-none active:scale-95 shadow-[0_0_15px_rgba(0,123,167,0.3)]" data-tag="all">All Projects</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Biomechanics">Biomechanics</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Cardiovascular modeling">Cardiovascular modeling</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Co-design">Co-design</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Computational Modeling">Computational Modeling</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Counterpulsation">Counterpulsation</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Implantable sensors">Implantable sensors</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Interaction design">Interaction design</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Magnetic Resonance Imaging">Magnetic Resonance Imaging</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Optimization">Optimization</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Physiology">Physiology</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Soft robotics">Soft robotics</button>
-                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Wearable technology">Wearable technology</button>
+                <button id="tag-all"
+                    class="tag-btn active px-4 py-2 text-xs uppercase tracking-wider font-heading border border-kth-cerulean rounded-full bg-kth-cerulean text-white transition-all duration-300 cursor-pointer select-none active:scale-95 shadow-[0_0_15px_rgba(0,123,167,0.3)]"
+                    data-tag="all">All Projects</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Biomechanics">Biomechanics</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Cardiovascular modeling">Cardiovascular modeling</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Co-design">Co-design</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Computational Modeling">Computational Modeling</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Counterpulsation">Counterpulsation</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Implantable sensors">Implantable sensors</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Interaction design">Interaction design</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Magnetic Resonance Imaging">Magnetic Resonance Imaging</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Optimization">Optimization</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Physiology">Physiology</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Soft robotics">Soft robotics</button>
+                <button
+                    class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95"
+                    data-tag="Wearable technology">Wearable technology</button>
             </div>
         </div>
     </header>
@@ -116,7 +143,8 @@
                 wearable technologies</span>
 
             <!-- Project: ACTIVE-CLC -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Wearable technology", "Counterpulsation", "Biomechanics", "Computational Modeling"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Wearable technology", "Counterpulsation", "Biomechanics", "Computational Modeling"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h2 class="text-3xl text-kth-cerulean font-light font-heading">ACTIVE-CLC: Active cardiac locomotor
                         coupling</h2>
@@ -136,10 +164,16 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Wearable technology</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Counterpulsation</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Biomechanics</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational Modeling</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Wearable
+                            technology</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Counterpulsation</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Biomechanics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational
+                            Modeling</span>
                     </div>
 
                     <!-- Publications -->
@@ -211,7 +245,8 @@
             </div>
 
             <!-- Project: Age inclusive design -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300" data-tags='["Wearable technology", "Co-design"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300"
+                data-tags='["Wearable technology", "Co-design"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h2 class="text-3xl text-kth-cerulean font-light font-heading">Age inclusive design of interactive
                         wearable for real-time biofeedback</h2>
@@ -233,8 +268,11 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Wearable technology</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Co-design</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Wearable
+                            technology</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Co-design</span>
                     </div>
 
                     <!-- Publications -->
@@ -275,7 +313,8 @@
             <h2 class="text-3xl text-kth-cerulean font-light font-heading mb-12">Cardiac support technologies</h2>
 
             <!-- Project: Aortic Assist -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Physiology", "Counterpulsation"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Physiology", "Counterpulsation"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
                         <a href="https://play.kth.se/media/Extra-Aortic+Counterpulsation+Aortic+Phantom+-+Made+with+Clipchamp/0_9mjuij62"
@@ -298,13 +337,16 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Physiology</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Counterpulsation</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Physiology</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Counterpulsation</span>
                     </div>
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/Autoregulation.png" alt="Autoregulation"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
@@ -312,7 +354,8 @@
             </div>
 
             <!-- Project: Electrically-driven soft robotic blood flow support to the lungs -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Soft robotics", "Counterpulsation", "Computational Modeling"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Soft robotics", "Counterpulsation", "Computational Modeling"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Electrically-driven soft
                         robotic blood flow support to the lungs</h3>
@@ -331,14 +374,20 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft robotics</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Counterpulsation</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational Modeling</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft
+                            robotics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Counterpulsation</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational
+                            Modeling</span>
                     </div>
 
                     <!-- Publications -->
                     <div class="space-y-6 pt-6 border-t border-gray-800/50">
-                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                        <h4
+                            class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
                         <div class="pl-0 space-y-4">
                             <div class="space-y-1">
@@ -353,15 +402,16 @@
                                     Compression device (e-VaC) with integrated sensing and controls: towards adaptive
                                     hemodynamic support of the pulmonary circulation</span>
                                 <p class="text-xs text-gray-400 font-light">I. Pirozzi, A. Kight, X. Liang, A.
-                                    Kyungwon Han, D.B. Ennis, W. Hiesinger, S.A. Dual, and M. Cutkosky (2022) &mdash; <span
-                                        class="italic">Advanced Materials Technologies, 2201196</span></p>
+                                    Kyungwon Han, D.B. Ennis, W. Hiesinger, S.A. Dual, and M. Cutkosky (2022) &mdash;
+                                    <span class="italic">Advanced Materials Technologies, 2201196</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/Extra-vascular actuator.png" alt="Extra vascular actuator"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
@@ -369,7 +419,8 @@
             </div>
 
             <!-- Project: Soft robotic cardiac assist device for the forgotten halt of heart failure patients -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300" data-tags='["Soft robotics", "Counterpulsation"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300"
+                data-tags='["Soft robotics", "Counterpulsation"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Soft robotic cardiac assist
                         device for the forgotten halt of heart failure patients</h3>
@@ -394,13 +445,17 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft robotics</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Counterpulsation</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft
+                            robotics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Counterpulsation</span>
                     </div>
 
                     <!-- Publications -->
                     <div class="space-y-6 pt-6 border-t border-gray-800/50">
-                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                        <h4
+                            class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
                         <div class="pl-0 space-y-4">
                             <div class="space-y-1">
@@ -426,8 +481,10 @@
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
-                        <img src="assets/images/research/Soft Robotic Support Heart.png" alt="Soft robotics for the heart"
+                    <div
+                        class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                        <img src="assets/images/research/Soft Robotic Support Heart.png"
+                            alt="Soft robotics for the heart"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
                 </div>
@@ -448,14 +505,15 @@
                 computational testing mitigates the need for excessive animal testing, a common practice in
                 medical device innovations. Our research focuses on enabling patient-specific testing with the
                 goal to include underrepresented patient groups such as women and children early in the design
-                process. As a part of this work, we have built <a
-                    href="https://www.youtube.com/watch?v=p_-7MmHzErs" target="_blank"
-                    class="text-kth-cerulean underline">Scandinavia's first hybrid mock circulatory loop</a>,
+                process. As a part of this work, we have built <a href="https://www.youtube.com/watch?v=p_-7MmHzErs"
+                    target="_blank" class="text-kth-cerulean underline">Scandinavia's first hybrid mock circulatory
+                    loop</a>,
                 which enables testing of physical prototypes in interaction with a virtual model of the patient.
             </p>
 
             <!-- Project: CardioLoop -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Magnetic Resonance Imaging", "Soft robotics", "Biomechanics"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Magnetic Resonance Imaging", "Soft robotics", "Biomechanics"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">CardioLoop: A versatile
                         hybrid mock circulatory loop for medical device testing</h3>
@@ -481,14 +539,20 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Magnetic Resonance Imaging</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft robotics</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Biomechanics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Magnetic
+                            Resonance Imaging</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft
+                            robotics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Biomechanics</span>
                     </div>
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/MRI_MCL_Schematic.png" alt="MRI MCL Schematic"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
@@ -496,7 +560,8 @@
             </div>
 
             <!-- Project: Patient-specific computational modeling -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Computational Modeling", "Optimization"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Computational Modeling", "Optimization"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Patient-specific
                         computational modeling</h3>
@@ -515,15 +580,19 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational Modeling</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Optimization</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational
+                            Modeling</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Optimization</span>
                     </div>
                 </div>
                 <div class="md:col-span-2"></div>
             </div>
 
             <!-- Project: Pre-clinical evaluation of TAH -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Biomechanics", "Cardiovascular modeling"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Biomechanics", "Cardiovascular modeling"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Pre-clinical evaluation of
                         the physiological control of a total artificial heart</h3>
@@ -544,13 +613,17 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Biomechanics</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Cardiovascular modeling</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Biomechanics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Cardiovascular
+                            modeling</span>
                     </div>
 
                     <!-- Publications -->
                     <div class="space-y-6 pt-6 border-t border-gray-800/50">
-                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                        <h4
+                            class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
                         <div class="pl-0 space-y-4">
                             <div class="space-y-1">
@@ -566,15 +639,17 @@
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
-                        <img src="assets/images/TAH_phys_control.png" alt="TAH"
+                    <div
+                        class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                        <img src="assets/images/research/TAH_phys_control.png" alt="TAH"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
                 </div>
             </div>
 
             <!-- Project: Data-driven cardiovascular assist devices -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Computational Modeling", "Cardiovascular modeling"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Computational Modeling", "Cardiovascular modeling"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
                         <a href="https://www.digitalfutures.kth.se/research/research-pairs/ongoing-research-pairs-projects/data-driven-cardiovascular-assist-devices/"
@@ -593,13 +668,18 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational Modeling</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Cardiovascular modeling</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational
+                            Modeling</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Cardiovascular
+                            modeling</span>
                     </div>
 
                     <!-- Publications -->
                     <div class="space-y-6 pt-6 border-t border-gray-800/50">
-                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                        <h4
+                            class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
                         <div class="pl-0 space-y-4">
                             <div class="space-y-1">
@@ -622,7 +702,8 @@
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/Data-driven device design.png"
                             alt="data-driven-cardiovascular-assist-devices"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
@@ -631,7 +712,8 @@
             </div>
 
             <!-- Project: Fundamental understanding of aortic coarctation biomechanics during exercise -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300" data-tags='["Biomechanics", "Cardiovascular modeling"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300"
+                data-tags='["Biomechanics", "Cardiovascular modeling"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
                         Fundamental understanding of aortic coarctation biomechanics during exercise
@@ -651,18 +733,21 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Biomechanics</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Cardiovascular modeling</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Biomechanics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Cardiovascular
+                            modeling</span>
                     </div>
 
                     <!-- Publications -->
                     <div class="space-y-6 pt-6 border-t border-gray-800/50">
-                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                        <h4
+                            class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
                         <div class="pl-0 space-y-4">
                             <div class="space-y-1">
-                                <a href="http://kth.diva-portal.org/smash/record.jsf?pid=diva2:1990376"
-                                    target="_blank"
+                                <a href="http://kth.diva-portal.org/smash/record.jsf?pid=diva2:1990376" target="_blank"
                                     class="block text-sm text-white underline font-light transition">Experiments and
                                     Simulations to Assess Exercise-Induced Pressure Drop Across Aortic
                                     Coarctations</a>
@@ -678,8 +763,7 @@
                                         Society of Biomechanics, Edinburgh (Nominated for Poster Award)</span></p>
                             </div>
                             <div class="space-y-1">
-                                <a href="http://kth.diva-portal.org/smash/record.jsf?pid=diva2:1804609"
-                                    target="_blank"
+                                <a href="http://kth.diva-portal.org/smash/record.jsf?pid=diva2:1804609" target="_blank"
                                     class="block text-sm text-white underline font-light transition">Hemodynamics in
                                     Patients with Aortic Coarctation: A Comparison of in vivo 4D-Flow MRI and FSI
                                     Simulation</a>
@@ -691,7 +775,8 @@
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/Aortic coarctation.png" alt="Aortic Coarctation"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
@@ -705,10 +790,12 @@
         <section id="signal-processing" class="py-10">
             <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Physiologically-guided
                 signal processing</span>
-            <h2 class="text-3xl text-kth-cerulean font-light font-heading mb-12">Physiology-guided signal processing</h2>
+            <h2 class="text-3xl text-kth-cerulean font-light font-heading mb-12">Physiology-guided signal processing
+            </h2>
 
             <!-- Project: Digital Health Tools for non-invasive diagnosis of lung disease -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300" data-tags='["Physiology", "Computational Modeling"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300"
+                data-tags='["Physiology", "Computational Modeling"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Digital Health Tools for
                         non-invasive diagnosis of lung disease</h3>
@@ -726,13 +813,17 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Physiology</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational Modeling</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Physiology</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Computational
+                            Modeling</span>
                     </div>
 
                     <!-- Publications -->
                     <div class="space-y-6 pt-6 border-t border-gray-800/50">
-                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                        <h4
+                            class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
                         <div class="pl-0 space-y-4">
                             <div class="space-y-1">
@@ -765,7 +856,8 @@
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/PH_Signal_Processing.png" alt="Signal Processing"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
@@ -783,7 +875,8 @@
                 health monitoring</h2>
 
             <!-- Project: TENG Sensors -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Wearable technology"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Wearable technology"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Biocompatible and
                         biodegradable materials based self-powered wearable sensors for healthcare monitoring</h3>
@@ -804,12 +897,15 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Wearable technology</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Wearable
+                            technology</span>
                     </div>
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/Wound%20Healing.jpg" alt="Wound Healing"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
@@ -817,7 +913,8 @@
             </div>
 
             <!-- Project: Post-surgical Monitoring -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300" data-tags='["Implantable sensors", "Soft robotics"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-12 transition-all duration-300"
+                data-tags='["Implantable sensors", "Soft robotics"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
                         <a href="https://www.digitalfutures.kth.se/research/research-pairs/ongoing-research-pairs-projects/bioact-self-powered-biodegradable-pressure-sensor-for-wireless-post-surgical-patient-management/"
@@ -839,13 +936,18 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Implantable sensors</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft robotics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Implantable
+                            sensors</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft
+                            robotics</span>
                     </div>
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/BioAct.jpg" alt="Bio Act"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
@@ -853,7 +955,8 @@
             </div>
 
             <!-- Project: Highly durable soft strain sensor -->
-            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300" data-tags='["Implantable sensors", "Soft robotics"]'>
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-16 transition-all duration-300"
+                data-tags='["Implantable sensors", "Soft robotics"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Highly durable soft strain
                         sensor</h3>
@@ -871,13 +974,18 @@
                     </div>
                     <!-- Project Tags -->
                     <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Implantable sensors</span>
-                        <span class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft robotics</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Implantable
+                            sensors</span>
+                        <span
+                            class="px-2.5 py-1 text-[10px] uppercase tracking-wider font-heading rounded-md bg-kth-cerulean/10 border border-kth-cerulean/20 text-kth-cerulean">Soft
+                            robotics</span>
                     </div>
 
                     <!-- Publications -->
                     <div class="space-y-6 pt-6 border-t border-gray-800/50">
-                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                        <h4
+                            class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
                         <div class="pl-0 space-y-4">
                             <div class="space-y-1">
@@ -885,8 +993,8 @@
                                     Network for Postoperative Cardiac Monitoring in Heart Failure Patients</span>
                                 <p class="text-xs text-gray-400 font-light">A. Kight, M. Haidar, M. Shibata, Y. Ono,
                                     G. Ikeda, A. Sharir, F. Semproni, Y. Palagani, S. Taheri, A. Kyungwon Han, M. Ma,
-                                    K. Riemer, D.B. McElhinney, S.A. Dual, M. Cutkosky &mdash; <span
-                                        class="italic">npj Biomed. Innov. (In Press)</span></p>
+                                    K. Riemer, D.B. McElhinney, S.A. Dual, M. Cutkosky &mdash; <span class="italic">npj
+                                        Biomed. Innov. (In Press)</span></p>
                             </div>
                             <div class="space-y-1">
                                 <a href="http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:1748271"
@@ -909,7 +1017,8 @@
                 </div>
                 <!-- Image on the Right -->
                 <div class="md:col-span-2 self-start">
-                    <div class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
+                    <div
+                        class="bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl flex items-center justify-center">
                         <img src="assets/images/research/Durable%20strain%20sensor.png" alt="Durable strain sensor"
                             class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition duration-700">
                     </div>
@@ -962,7 +1071,7 @@
                     allBtn.classList.add('active', 'bg-kth-cerulean', 'border-kth-cerulean', 'text-white');
                     allBtn.classList.remove('border-white/10', 'bg-kth-dark/60', 'text-gray-300');
                     allBtn.style.boxShadow = '0 0 15px rgba(0,123,167,0.3)';
-                    
+
                     // Show all cards
                     cards.forEach(card => {
                         card.classList.remove('hidden');
@@ -990,7 +1099,7 @@
                 sections.forEach(section => {
                     const sectionCards = section.querySelectorAll('.project-card');
                     const hasVisible = Array.from(sectionCards).some(card => !card.classList.contains('hidden'));
-                    
+
                     // Toggle section visibility
                     section.classList.toggle('hidden', !hasVisible);
 
@@ -1033,7 +1142,7 @@
                             btn.style.boxShadow = '0 0 15px rgba(0,123,167,0.3)';
                         }
                     }
-                    
+
                     // Run filter
                     filterProjects();
                 });
