@@ -59,7 +59,7 @@
 
     <!-- Navbar -->
     <nav
-        class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white bg-kth-dark/80 backdrop-blur-sm border-b border-white/5">
+        class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center text-white bg-kth-dark/95 backdrop-blur-md border-b border-white/20">
         <!-- Logo Text -->
         <a href="index.html"
             class="text-xl font-light tracking-widest uppercase border-b border-transparent hover:border-kth-cerulean transition-all duration-300 font-heading">
@@ -82,35 +82,63 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop"
-                alt="Lab Background" class="w-full h-full object-cover opacity-20 filter grayscale contrast-125">
-            <div class="absolute inset-0 bg-gradient-to-b from-kth-dark/80 via-transparent to-kth-dark"></div>
-        </div>
+    <section class="relative pt-32 pb-8 bg-kth-dark overflow-hidden flex flex-col justify-between">
 
-        <div class="relative z-10 text-center max-w-5xl mx-auto mt-[-10vh]">
-            <h1 class="text-6xl md:text-8xl font-thin tracking-tighter mb-4 text-white">
+        <!-- Top Left Title & Vision -->
+        <div class="container mx-auto px-12 relative z-20 pt-12 md:pt-0">
+            <h1 class="text-6xl md:text-[7rem] font-thin tracking-tighter mb-4 text-white font-heading leading-none">
                 I-HeaL
             </h1>
             <p
-                class="text-xl md:text-2xl font-light tracking-[0.15em] text-white uppercase mb-16 border-b border-gray-800 inline-block pb-6 px-12">
+                class="text-xl md:text-2xl font-light tracking-[0.15em] text-white uppercase inline-block font-heading border-b border-gray-800 pb-4">
                 Intelligent Heart Technology Lab
             </p>
-
-            <div class="text-lg md:text-2xl font-light leading-relaxed max-w-4xl mx-auto text-white">
+            <div
+                class="text-2xl md:text-3xl lg:text-4xl text-white/90 font-light leading-snug font-heading drop-shadow-md mt-10 max-w-6xl">
                 We are motivated by clinical needs which we address with a variety of intelligent technological
-                solutions. In turn, our approach allows us to improve understanding of system-level cardiovascular
-                physiology.
+                solutions. In turn, our approach allows us to improve understanding of system-level
+                cardiovascular physiology.
             </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3">
-                </path>
-            </svg>
+        <!-- Aligned Slideshow Container -->
+        <div class="container mx-auto px-12 relative z-10 mt-16">
+            <div
+                class="relative w-full h-[400px] md:h-[600px] bg-gray-900 slideshow-container overflow-hidden rounded-xl shadow-2xl">
+                <img src="/assets/Group_Picture-DZst27GE.jpeg" alt="Group Picture"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="/assets/Mock_Loop-BoZYN4SI.jpg" alt="Mock Loop"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-100">
+                <img src="/assets/Age_inclusive_design-BAqfz6KR.png" alt="Co-design Wearables"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="/assets/IMG_0576-CZfJcU0D.jpg" alt="Lab Work"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="/assets/Active_CLC-BS1pcRpS.jpg" alt="Active CLC"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="/assets/MRI-h7S_IvOr.jpg" alt="MRI"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <img src="/assets/Student_in_Lab-CWdFuIB3.jpg" alt="Student in Lab"
+                    class="w-full h-full object-cover object-center absolute inset-0 slide transition-opacity duration-500 ease-in-out opacity-0">
+                <div class="absolute inset-0 bg-kth-dark/10 mix-blend-multiply z-10 pointer-events-none"></div>
+            </div>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const slides = document.querySelectorAll('.slideshow-container .slide');
+                let currentSlide = 0;
+                if (slides.length > 1) {
+                    setInterval(() => {
+                        slides[currentSlide].classList.remove('opacity-100');
+                        slides[currentSlide].classList.add('opacity-0');
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        slides[currentSlide].classList.remove('opacity-0');
+                        slides[currentSlide].classList.add('opacity-100');
+                    }, 2500); // Crossfade every 2.5 seconds
+                }
+            });
+        </script>
+
     </section>
 
     <!-- Main Navigation Grid / Tabs -->
@@ -131,9 +159,10 @@
                         class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-cerulean transition-colors font-heading">
                         People</h3>
                     <div
-                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-kth-cerulean transition-all duration-700">
+                        class="w-12 h-px bg-gray-800 mb-6 group-hover:w-full group-hover:bg-kth-cerulean transition-all duration-700">
                     </div>
-                    <p class="text-sm text-white font-light leading-loose"> Get to know the researchers, students,
+                    <p class="text-sm text-gray-400 font-light leading-loose"> Get to know the
+                        researchers, students,
                         and collaborators who drive our lab's discoveries and innovations. </p>
                 </div>
             </a>
@@ -142,8 +171,8 @@
                 class="group relative block border-r border-gray-900 p-12 hover:bg-white/[0.02] transition-colors duration-500">
                 <div class="relative z-10 h-full flex flex-col justify-end">
                     <!-- Icon: Flask/Microscope (Beaker) -->
-                    <svg class="w-10 h-10 text-white mb-6 stroke-[1.5]" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24">
+                    <svg class="w-10 h-10 text-white dark:text-white mb-6 stroke-[1.5]" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
                         </path>
@@ -152,14 +181,14 @@
                         class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-cerulean transition-colors font-heading">
                         Research</h3>
                     <div
-                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-white transition-all duration-700">
+                        class="w-12 h-px bg-gray-800 mb-6 group-hover:w-full group-hover:bg-kth-cerulean transition-all duration-700">
                     </div>
-                    <p class="text-sm text-white font-light leading-loose">Exploring biomechanics, computational
+                    <p class="text-sm text-gray-400 font-light leading-loose">Exploring robotics, computational
                         modeling, and medical device innovation.</p>
                 </div>
             </a>
 
-            <a href="join.html" class="group relative block p-12 hover:bg-white/[0.02] transition-colors duration-500">
+            <a href="join.html" class="group relative block p-12 hover:bg-gray-900 transition-colors duration-500">
                 <div class="relative z-10 h-full flex flex-col justify-end">
                     <!-- Icon: UserPlus -->
                     <svg class="w-10 h-10 text-white mb-6 stroke-[1.5]" fill="none" stroke="currentColor"
@@ -172,9 +201,10 @@
                         class="text-3xl font-light text-white tracking-widest uppercase mb-4 group-hover:text-kth-cerulean transition-colors font-heading">
                         Join Us</h3>
                     <div
-                        class="w-12 h-px bg-gray-600 mb-6 group-hover:w-full group-hover:bg-white transition-all duration-700">
+                        class="w-12 h-px bg-gray-800 mb-6 group-hover:w-full group-hover:bg-kth-cerulean transition-all duration-700">
                     </div>
-                    <p class="text-sm text-white font-light leading-loose">Opportunities for PhD students, post-docs,
+                    <p class="text-sm text-gray-400 font-light leading-loose">Opportunities for PhD
+                        students, post-docs,
                         and thesis projects.</p>
                 </div>
             </a>
@@ -182,17 +212,19 @@
     </section>
 
     <!-- High-Fidelity LinkedIn News Feed -->
-    <section id="news" class="py-32 bg-black">
+    <section id="news" class="py-32 bg-kth-dark transition-colors duration-500">
         <div class="container mx-auto px-6 md:px-12 max-w-7xl">
             <h4
                 class="text-white text-sm tracking-widest uppercase mb-16 text-center md:text-left font-semibold font-heading">
                 Latest News</h4>
 
-            <div class="bg-[#1b1f23] rounded-xl border border-gray-800 overflow-hidden shadow-2xl">
+            <div
+                class="bg-[#1b1f23] rounded-xl border border-gray-800 overflow-hidden shadow-2xl transition-all duration-500">
                 <!-- LinkedIn Header -->
                 <div class="p-6 md:p-8 flex items-center justify-between border-b border-gray-700/50 bg-[#1b1f23]">
                     <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-white rounded-md flex items-center justify-center shrink-0">
+                        <div
+                            class="w-14 h-14 bg-gray-800/50 border border-transparent rounded-md flex items-center justify-center shrink-0">
                             <!-- LinkedIn Icon -->
                             <svg class="w-8 h-8 text-[#0077b5]" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -200,22 +232,126 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-white font-bold text-lg leading-tight">Intelligent Heart Technology Lab</h3>
-                            <p class="text-white text-xs mt-1">Updates from LinkedIn</p>
+                            <h3 class="text-white font-bold text-lg leading-tight">Intelligent Heart
+                                Technology Lab</h3>
+                            <p class="text-white/70 text-xs mt-1">Updates from LinkedIn</p>
                         </div>
                     </div>
                     <a href="https://www.linkedin.com/company/intelligent-heart-technology-lab/" target="_blank"
-                        class="hidden md:inline-flex items-center px-6 py-2 border border-white text-white text-xs font-bold tracking-widest hover:bg-white hover:text-kth-dark transition uppercase rounded">
-                        Follow
+                        class="hidden md:inline-flex items-center px-6 py-2 border border-white text-white text-xs font-bold tracking-widest hover:bg-white/10 hover:text-white transition uppercase rounded">
+                        Follow Us
                     </a>
                 </div>
 
-                <!-- SociableKIT Widget -->
-                <!-- Juicer.io Widget -->
-                <script type="text/javascript"
-                    src="https://www.juicer.io/embed/intelligent-heart-technology-lab/embed-code.js" async
-                    defer></script>
+                <!-- Custom LinkedIn Feed Container - Grid Layout -->
+                <div id="custom-linkedin-feed"
+                    class="p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg-[#15191d]">
+                    <!-- Skeleton Loader -->
+                    <div class="col-span-full flex justify-center py-20">
+                        <div class="animate-pulse flex flex-col items-center">
+                            <div
+                                class="w-10 h-10 border-4 border-kth-cerulean border-t-transparent rounded-full animate-spin mb-4">
+                            </div>
+                            <p class="text-slate-400 dark:text-gray-400 text-sm tracking-widest uppercase">Fetching
+                                social updates...</p>
+                        </div>
+                    </div>
+                </div>
 
+                <script>
+                    document.addEventListener('DOMContentLoaded', async () => {
+                        const container = document.getElementById('custom-linkedin-feed');
+                        try {
+                            const res = await fetch('/api/get-posts');
+                            const data = await res.json();
+
+                            container.innerHTML = ''; // Clear loading state
+
+                            if (!res.ok || !data.success || !data.posts || data.posts.length === 0) {
+                                container.innerHTML = `
+                                    <div class="col-span-full text-center py-20 border border-gray-800 rounded-2xl bg-kth-dark">
+                                        <p class="text-gray-400 mb-6 font-light">LinkedIn updates are currently tucked away.</p>
+                                        <a href="https://www.linkedin.com/company/intelligent-heart-technology-lab/" target="_blank" 
+                                           class="w-full md:w-auto px-12 py-3 bg-kth-cerulean text-white uppercase text-xs tracking-widest hover:bg-white/10 hover:text-white transition duration-300 font-bold">
+                                            Visit our Profile
+                                        </a>
+                                    </div>
+                                `;
+                                return;
+                            }
+
+                            data.posts.forEach((post) => {
+                                const card = document.createElement('a');
+                                card.href = post.url || 'https://www.linkedin.com/company/intelligent-heart-technology-lab/';
+                                card.target = '_blank';
+                                card.className = 'group bg-white border border-slate-100 rounded-xl overflow-hidden flex flex-col shadow-2xl hover:bg-slate-50 hover:-translate-y-1 transition-all duration-500 cursor-pointer';
+
+                                // Dynamic Date Formatting (e.g. 10 apr 2026)
+                                let displayDate = 'Post recente';
+                                if (post.date) {
+                                    try {
+                                        const d = new Date(post.date);
+                                        if (!isNaN(d.getTime())) {
+                                            displayDate = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short', year: 'numeric' }).replace('.', '');
+                                        }
+                                    } catch (e) { }
+                                }
+
+                                // Avatar with fallback to LinkedIn icon
+                                const avatarHtml = post.avatar_url ?
+                                    `<img src="${post.avatar_url}" class="w-10 h-10 rounded object-cover shadow-inner" onerror="this.outerHTML='<div class=\\'w-10 h-10 bg-[#0077b5] rounded flex items-center justify-center\\'><svg class=\\'w-6 h-6 text-white\\' viewBox=\\'0 0 24 24\\'><path fill=\\'currentColor\\' d=\\'M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z\\'/></svg></div>'">` :
+                                    `<div class="w-10 h-10 bg-[#0077b5] rounded flex items-center justify-center shrink-0 shadow-sm">
+                                        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                                    </div>`;
+
+                                // Header: Minimalist and Authentic
+                                const headerHtml = `
+                                    <div class="p-4 flex items-center gap-3">
+                                        ${avatarHtml}
+                                        <div class="flex flex-col">
+                                            <span class="text-slate-900 font-bold text-[11px] uppercase tracking-tight">Intelligent Heart Technology Lab</span>
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-gray-400 text-[10px] uppercase tracking-wider">${displayDate}</span>
+                                                <span class="text-gray-400">·</span>
+                                                <svg class="w-2.5 h-2.5 text-gray-400 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+
+                                // Lab Body Text
+                                const bodyHtml = `
+                                    <div class="px-4 pb-4">
+                                        <p class="text-slate-700 text-[13.5px] leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-300">
+                                            ${post.text}
+                                        </p>
+                                    </div>
+                                `;
+
+                                // High-Res Image (if available)
+                                let imageHtml = '';
+                                if (post.image_url && post.image_url !== 'null') {
+                                    imageHtml = `
+                                        <div class="w-full bg-slate-50 border-t border-slate-100 aspect-video overflow-hidden">
+                                            <img src="${post.image_url}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                                        </div>
+                                    `;
+                                }
+
+                                card.innerHTML = headerHtml + bodyHtml + imageHtml;
+                                container.appendChild(card);
+                            });
+
+                        } catch (err) {
+                            console.error("Errore fetch posts:", err);
+                            container.innerHTML = `
+                                <div class="text-center py-12 border border-gray-700/50 rounded-lg bg-[#22272d]">
+                                    <p class="text-gray-400">Si è verificato un errore durante il caricamento del feed.</p>
+                                </div>
+                            `;
+                        }
+                    });
+                </script>
             </div>
         </div>
     </section>
@@ -237,12 +373,13 @@
     </style>
 
     <!-- Partners & Funding -->
-    <section class="py-32 bg-[#0F1115] border-t border-gray-900 overflow-hidden relative">
-        <!-- Soft Glow Background -->
-        <div class="absolute inset-0 bg-kth-cerulean/5 blur-[100px] pointer-events-none"></div>
+    <section class="py-32 bg-kth-dark border-t border-gray-900 overflow-hidden relative transition-colors duration-500">
+        <!-- Soft Glow Background (only visible in Dark Mode) -->
+        <div class="absolute inset-0 bg-kth-cerulean/5 blur-[100px] pointer-events-none opacity-0 dark:opacity-100">
+        </div>
 
         <div class="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
-            <h4 class="text-white text-[10px] tracking-[0.3em] uppercase mb-20 text-center font-heading">
+            <h4 class="text-white text-xl tracking-[0.3em] uppercase mb-16 text-center font-heading">
                 Supported By
             </h4>
 
@@ -251,33 +388,33 @@
                 <div class="flex items-center gap-16 md:gap-32 w-max animate-scroll">
                     <!-- Original Set -->
                     <div class="flex items-center gap-16 md:gap-32">
-                        <img src="assets/images/funding/Promobilia_Stiftelsen.png" alt="Promobilia Stiftelsen"
+                        <img src="/assets/Promobilia_Stiftelsen-MYWq4KNR.png" alt="Promobilia Stiftelsen"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/Ake_Wiberg_Foundation.png" alt="Åke Wiberg Foundation"
+                        <img src="/assets/Ake_Wiberg_Foundation-CAt5qYo6.png" alt="Åke Wiberg Foundation"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/Kamprad.png" alt="Kamprad Foundation"
+                        <img src="/assets/Kamprad-B74M3t1V.png" alt="Kamprad Foundation"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/vinnova.png" alt="VINNOVA"
+                        <img src="/assets/vinnova-CMSBjayv.png" alt="VINNOVA"
                             class="h-14 md:h-16 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/digital_futures.png" alt="Digital Futures"
+                        <img src="/assets/digital_futures-BzDQrL5N.png" alt="Digital Futures"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/swedish-research-council.png" alt="Swedish Research Council"
+                        <img src="/assets/swedish-research-council-DtzDvZqW.png" alt="Swedish Research Council"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
                     </div>
 
                     <!-- Duplicate Set for Seamless Loop -->
                     <div class="flex items-center gap-16 md:gap-32" aria-hidden="true">
-                        <img src="assets/images/funding/Promobilia_Stiftelsen.png" alt="Promobilia Stiftelsen"
+                        <img src="/assets/Promobilia_Stiftelsen-MYWq4KNR.png" alt="Promobilia Stiftelsen"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/Ake_Wiberg_Foundation.png" alt="Åke Wiberg Foundation"
+                        <img src="/assets/Ake_Wiberg_Foundation-CAt5qYo6.png" alt="Åke Wiberg Foundation"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/Kamprad.png" alt="Kamprad Foundation"
+                        <img src="/assets/Kamprad-B74M3t1V.png" alt="Kamprad Foundation"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/vinnova.png" alt="VINNOVA"
+                        <img src="/assets/vinnova-CMSBjayv.png" alt="VINNOVA"
                             class="h-14 md:h-16 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/digital_futures.png" alt="Digital Futures"
+                        <img src="/assets/digital_futures-BzDQrL5N.png" alt="Digital Futures"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
-                        <img src="assets/images/funding/swedish-research-council.png" alt="Swedish Research Council"
+                        <img src="/assets/swedish-research-council-DtzDvZqW.png" alt="Swedish Research Council"
                             class="h-16 md:h-20 w-auto object-contain transition duration-500">
                     </div>
                 </div>
@@ -286,11 +423,12 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-kth-dark py-16 border-t border-gray-900">
-        <div class="container mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
-            <div class="mb-8 md:mb-0">
-                <div class="text-white text-lg tracking-widest uppercase font-bold mb-4">KTH I-HeaL</div>
-                <div class="text-white text-sm font-light leading-relaxed">
+    <footer id="contact" class="bg-kth-dark py-20 border-t border-gray-900 transition-colors duration-500">
+        <div
+            class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-center">
+            <div class="mb-12 md:mb-0">
+                <div class="text-white text-xl tracking-widest uppercase font-bold mb-4 font-heading">KTH I-HeaL</div>
+                <div class="text-white/60 text-sm font-light leading-relaxed uppercase tracking-widest">
                     KTH Royal Institute of Technology<br>
                     Hälsovägen 11<br>
                     141 52 Huddinge, Stockholm, Sweden
@@ -298,13 +436,15 @@
             </div>
 
             <div
-                class="flex flex-col md:flex-row md:items-center gap-6 text-sm text-white font-light tracking-widest uppercase">
-                <a href="join.html" class="hover:text-white transition">Join Us</a>
+                class="flex flex-col md:flex-row md:items-center gap-8 text-xs text-white/60 font-bold tracking-widest uppercase">
+                <a href="people.html" class="hover:text-kth-cerulean transition">People</a>
+                <a href="research.html" class="hover:text-kth-cerulean transition">Research</a>
+                <a href="join.html" class="hover:text-kth-cerulean transition">Join Us</a>
             </div>
         </div>
         <div
-            class="container mx-auto px-12 mt-12 pt-8 border-t border-gray-900 text-center text-xs text-gray-700 font-mono">
-            &copy; 2026 INTELLIGENT HEART TECHNOLOGY LAB
+            class="container mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-gray-900 text-center text-[10px] text-white/20 uppercase tracking-widest">
+            &copy; 2026 INTELLIGENT HEART TECHNOLOGY LABORATORY
         </div>
     </footer>
 

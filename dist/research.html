@@ -59,7 +59,7 @@
 
     <!-- Navbar -->
     <nav
-        class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white bg-kth-dark/80 backdrop-blur-sm border-b border-white/5">
+        class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center text-white bg-kth-dark/95 backdrop-blur-md border-b border-white/20">
         <a href="index.html"
             class="text-xl font-light tracking-widest uppercase hover:text-kth-cerulean transition-all duration-300 font-heading">
             KTH <span class="font-bold">I-HeaL</span>
@@ -84,24 +84,27 @@
             and sensor integration to improve cardiovascular health outcomes.
         </p>
 
-        <!-- Dynamic Navigation Menu -->
-        <nav
-            class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4 text-sm tracking-widest uppercase font-heading border-t border-gray-900 pt-8">
-            <a href="#wearable-tech"
-                class="hover:text-kth-cerulean transition border-b border-transparent hover:border-kth-cerulean">Interactive
-                Wearables</a>
-            <a href="#cardiac-support"
-                class="hover:text-kth-cerulean transition border-b border-transparent hover:border-kth-cerulean">Cardiac
-                Support</a>
-            <a href="#test-rigs"
-                class="hover:text-kth-cerulean transition border-b border-transparent hover:border-kth-cerulean">Test-Rigs</a>
-            <a href="#signal-processing"
-                class="hover:text-kth-cerulean transition border-b border-transparent hover:border-kth-cerulean">Signal
-                Processing</a>
-            <a href="#implantable-sensors"
-                class="hover:text-kth-cerulean transition border-b border-transparent hover:border-kth-cerulean">Sensors
-                & Monitoring</a>
-        </nav>
+
+
+        <!-- Tag Filter System -->
+        <div class="mt-12 border-t border-gray-900 pt-8 text-center md:text-left">
+            <span class="text-xs uppercase tracking-widest text-gray-400 block mb-4 font-heading">Filter by tags (from Ongoing Projects):</span>
+            <div id="tag-filters" class="flex flex-wrap justify-center md:justify-start gap-2.5">
+                <button id="tag-all" class="tag-btn active px-4 py-2 text-xs uppercase tracking-wider font-heading border border-kth-cerulean rounded-full bg-kth-cerulean text-white transition-all duration-300 cursor-pointer select-none active:scale-95 shadow-[0_0_15px_rgba(0,123,167,0.3)]" data-tag="all">All Projects</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Biomechanics">Biomechanics</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Cardiovascular modeling">Cardiovascular modeling</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Co-design">Co-design</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Computational Modeling">Computational Modeling</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Counterpulsation">Counterpulsation</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Implantable sensors">Implantable sensors</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Interaction design">Interaction design</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Magnetic Resonance Imaging">Magnetic Resonance Imaging</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Optimization">Optimization</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Physiology">Physiology</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Soft robotics">Soft robotics</button>
+                <button class="tag-btn px-4 py-2 text-xs uppercase tracking-wider font-heading border border-white/10 rounded-full bg-kth-dark/60 text-gray-300 hover:border-kth-cerulean hover:text-white transition-all duration-300 cursor-pointer select-none active:scale-95" data-tag="Wearable technology">Wearable technology</button>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -110,10 +113,10 @@
         <!-- SECTION 1: Interactive wearable technologies -->
         <section id="wearable-tech" class="py-20">
             <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Interactive
-                Wearables</span>
+                wearable technologies</span>
 
             <!-- Project: ACTIVE-CLC -->
-            <div class="grid md:grid-cols-5 gap-12 items-start mb-24">
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Wearable technology", "Counterpulsation", "Biomechanics", "Computational Modeling"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h2 class="text-3xl text-kth-cerulean font-light font-heading">ACTIVE-CLC: Active cardiac locomotor
                         coupling</h2>
@@ -124,9 +127,11 @@
                         patients with heart failure using a wearable sensor system with an auditory signal for the
                         synchronization of the heart and movement.
                     </p>
-                    <div class="text-xs tracking-widest text-white uppercase space-y-1 font-heading">
-                        <div>Contact: <span class="text-white">Aurora Rosato</span></div>
-                        <div>Funded by: <span class="text-white">Promobilia Stiftelsen and Åke Wiberg Foundation</span>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/rosato" target="_blank"
+                                class="text-white hover:underline">Aurora Rosato</a></div>
+                        <div>Funded by: <span class="text-white">Promobilia Stiftelsen and Åke Wiberg
+                                Foundation</span>
                         </div>
                     </div>
 
@@ -134,9 +139,8 @@
                     <div class="space-y-6 pt-6 border-t border-gray-800/50">
                         <h4
                             class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
-                            Selected Publications</h4>
-                        <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                            <h5 class="text-xs text-gray-500 font-light mb-1">2025</h5>
+                            Publications</h4>
+                        <div class="pl-0 space-y-4">
                             <div class="space-y-1">
                                 <a href="https://doi.org/10.3389/fnetp.2025.1637551" target="_blank"
                                     class="block text-sm text-white underline leading-tight font-light transition">Walking-induced
@@ -152,8 +156,7 @@
                                     &mdash; <span class="italic">Computing in Cardiology, vol.52</span></p>
                             </div>
                         </div>
-                        <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                            <h5 class="text-xs text-gray-500 font-light mb-1">2024</h5>
+                        <div class="pl-0 space-y-4">
                             <div class="space-y-1">
                                 <a href="https://www.cinc.org/archives/2024/pdf/CinC2024-363.pdf" target="_blank"
                                     class="block text-sm text-white underline leading-tight font-light transition">In-ear
@@ -174,8 +177,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                            <h5 class="text-xs text-gray-500 font-light mb-1">2023</h5>
+                        <div class="pl-0 space-y-4">
                             <div class="space-y-1">
                                 <a href="https://www.scitepress.org/Link.aspx?doi=10.5220/0011632700003414"
                                     target="_blank"
@@ -191,46 +193,62 @@
                     </div>
                 </div>
 
-                <div class="md:col-span-2 self-stretch">
-                    <div class="bg-[#1b1f23] rounded overflow-hidden h-full min-h-[400px] border border-gray-800">
-                        <img src="assets/images/research/active_clc.jpg" alt="ACTIVE-CLC"
-                            class="w-full h-full object-cover opacity-80 hover:opacity-100 transition duration-700">
+                <!-- Square Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div
+                        class="w-full aspect-square bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/ActiveCLC-Dbz4qMcC.webp" alt="ACTIVE-CLC"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
                     </div>
                 </div>
             </div>
 
             <!-- Project: Age inclusive design -->
-            <div class="grid md:grid-cols-5 gap-12 items-start">
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-32 transition-all duration-300" data-tags='["Wearable technology", "Co-design"]'>
                 <div class="md:col-span-3 space-y-6">
                     <h2 class="text-3xl text-kth-cerulean font-light font-heading">Age inclusive design of interactive
                         wearable for real-time biofeedback</h2>
                     <p class="text-white leading-loose font-light text-sm">
                         Older adults represent a heterogeneous group regarding their physical health, exercise habits
-                        and interests for health monitoring for physical exercise... This project aims to co-design
-                        inclusive interactive wearable technologies for enhancing physical activity among older adults
-                        to improve the long-term user engagement with wearable technologies over time.
+                        and interests for health monitoring for physical exercise. Wearable devices are often used for
+                        short-term purposes, and the long-term engagement with applications remains a challenge for all
+                        ages. Despite that technology available, interactive features such as biofeedback have been
+                        rarely implemented. There is a need to design age-inclusive interactive wearable technology that
+                        take into consideration older adults’ heterogeneity regarding their physical health, digital
+                        skills and individual motivation for physical exercise. This project aims to co-design inclusive
+                        interactive wearable technologies for enhancing physical activity among older adults to improve
+                        the long-term user engagement with wearable technologies over time.
                     </p>
                     <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                        <div>Contact: <span class="text-white">Tien-Ying Lu</span></div>
+                        <div>Contact: <a href="https://www.kth.se/profile/tyl" target="_blank"
+                                class="text-white hover:underline">Tien-Ying Lu</a></div>
                         <div>Funded by: <span class="text-white">Kamprad foundation</span></div>
                     </div>
-                    <div class="space-y-6 pt-6 border-t border-gray-800/50">
+
+                    <!-- Publications -->
+                    <div class="space-y-6 pt-12 border-t border-gray-800/50">
                         <h4
                             class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
-                        <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
+                        <div class="pl-0 space-y-4">
                             <div class="space-y-1">
-                                <span class="block text-sm text-white font-light">The use of wearables with real-time
-                                    feedback in rhythmic activity among older adults: A qualitative study.</span>
-                                <p class="text-xs text-gray-400 font-light">T.-Y. Lu et al. (Preprint)</p>
+                                <a href="https://preprints.jmir.org/preprint/71509/accepted" target="_blank"
+                                    class="block text-sm text-white underline leading-tight font-light transition">Lived
+                                    Experiences of Older Adults Using Wearables with Real-Time Feedback: A
+                                    Phenomenological Study</a>
+                                <p class="text-xs text-gray-400 font-light">T.-Y. Lu et al. (2025) &mdash; <span
+                                        class="italic">JMIR Preprints</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-2">
-                    <div class="bg-[#1b1f23] rounded overflow-hidden h-full min-h-[300px] border border-gray-800">
-                        <img src="assets/images/research/age_inclusive.jpg" alt="Age Inclusive Design"
-                            class="w-full h-full object-cover opacity-80 hover:opacity-100 transition duration-700">
+
+                <!-- Square Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div
+                        class="w-full aspect-square bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/Age_inclusive_design-BQeMUMQu.webp" alt="Age Inclusive Design"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
                     </div>
                 </div>
             </div>
@@ -240,113 +258,123 @@
 
         <!-- SECTION 2: Cardiac support technologies -->
         <section id="cardiac-support" class="py-20">
-            <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Device
-                Innovation</span>
-            <div class="grid md:grid-cols-5 gap-12 items-start">
-                <div class="md:col-span-3 space-y-8">
-                    <h2 class="text-3xl text-kth-cerulean font-light font-heading">Cardiac support technologies</h2>
+            <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Cardiac
+                support technologies</span>
+            <h2 class="text-3xl text-kth-cerulean font-light font-heading mb-12">Cardiac support technologies</h2>
 
-                    <!-- Aortic Assist -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
-                            <a href="https://play.kth.se/media/Extra-Aortic+Counterpulsation+Aortic+Phantom+-+Made+with+Clipchamp/0_9mjuij62"
-                                target="_blank" class="hover:underline">Aortic Assist</a>
-                        </h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            The AorticAssist project investigates cardiovascular autoregulatory mechanisms, soft robotic
-                            actuator design, and the clinical use of aortic counterpulsation. This research aims to
-                            improve the candidacy of counterpulsation as a long-term, out-of-hospital treatment option
-                            for heart failure patients and increase the efficacy of counterpulsation as a method of
-                            cardiac recovery. AorticAssist relies on benchtop methods such as mock flow loops,
-                            sensorised physiological phantoms, and 4D Flow MRI, as well as in-vivo and clinical studies
-                            to improve our understanding of the interaction between circulatory support and
-                            cardiovascular autoregulatory responses. These results are then used for data-driven design
-                            of novel soft-robotic counterpulsation actuators.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Kyle Mudge</span></div>
-                        </div>
+            <!-- Project: Aortic Assist -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Physiology", "Counterpulsation"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
+                        <a href="https://play.kth.se/media/Extra-Aortic+Counterpulsation+Aortic+Phantom+-+Made+with+Clipchamp/0_9mjuij62"
+                            target="_blank" class="hover:underline">Aortic Assist</a>
+                    </h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        The AorticAssist project investigates cardiovascular autoregulatory mechanisms, soft robotic
+                        actuator design, and the clinical use of aortic counterpulsation. This research aims to
+                        improve the candidacy of counterpulsation as a long-term, out-of-hospital treatment option
+                        for heart failure patients and increase the efficacy of counterpulsation as a method of
+                        cardiac recovery. AorticAssist relies on benchtop methods such as mock flow loops,
+                        sensorised physiological phantoms, and 4D Flow MRI, as well as in-vivo and clinical studies
+                        to improve our understanding of the interaction between circulatory support and
+                        cardiovascular autoregulatory responses. These results are then used for data-driven design
+                        of novel soft-robotic counterpulsation actuators.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/mudge" target="_blank"
+                                class="text-white hover:underline">Kyle Mudge</a></div>
+                    </div>
+                </div>
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/Autoregulation-2dg5VNcw.png" alt="Autoregulation"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: Electrically-driven soft robotic blood flow support to the lungs -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Soft robotics", "Counterpulsation", "Computational Modeling"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Electrically-driven soft
+                        robotic blood flow support to the lungs</h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        Post-operative failure of the right side of the heart is a major complication in cardiac
+                        surgery. Inspired by my PostDoc project on extra-vascular compression device, we developed a
+                        similar counter-pulsation device for augmenting blood flow to the lungs. A critical
+                        extension was the electro-pneumatic actuation approach which holds the potential for
+                        transcutaneous power transmission, reducing current electric driveline complications.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/seraina" target="_blank"
+                                class="text-white hover:underline">Seraina Dual</a></div>
+                        <div>In collaboration with: <span class="text-white">Prof. Mark Cutkosky, Stanford
+                                University</span></div>
                     </div>
 
-                    <!-- Lung Support -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Electrically-driven soft
-                            robotic blood flow support to the lungs</h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            Post-operative failure of the right side of the heart is a major complication in cardiac
-                            surgery. Inspired by my PostDoc project on extra-vascular compression device, we developed a
-                            similar counter-pulsation device for augmenting blood flow to the lungs. A critical
-                            extension was the electro-pneumatic actuation approach which holds the potential for
-                            transcutaneous power transmission, reducing current electric driveline complications.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Seraina Dual</span></div>
-
-                            <div>In collaboration with: <span class="text-white">Prof. Mark Cutkosky, Stanford
-                                    University</span></div>
-                        </div>
-
-                        <!-- Publications: Lung Support -->
-                        <div class="space-y-6 pt-6 mt-4 border-t border-gray-800/50">
-                            <h4
-                                class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
-                                Publications</h4>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2022</h5>
-                                <div class="space-y-1">
-                                    <span class="block text-sm text-white font-light">Circulatory Support: Artificial
-                                        Muscles
-                                        for the Future of Cardiovascular Assist Devices</span>
-                                    <p class="text-xs text-gray-400 font-light">I. Pirozzi, A. Kight, A. Kyungwon Han,
-                                        R.
-                                        Cutkosky, S.A. Dual (2022) &mdash; <span class="italic">Advanced Materials,
-                                            adma.202210713</span></p>
-                                </div>
-                                <div class="space-y-1">
-                                    <span class="block text-sm text-white font-light">Electrohydraulic Vascular
-                                        Compression
-                                        device (e-VaC) with integrated sensing and controls: towards adaptive
-                                        hemodynamic
-                                        support of the pulmonary circulation</span>
-                                    <p class="text-xs text-gray-400 font-light">I. Pirozzi, A. Kight, X. Liang, A.
-                                        Kyungwon
-                                        Han, D.B. Ennis, W. Hiesinger, S.A. Dual, and M. Cutkosky (2022) &mdash; <span
-                                            class="italic">Advanced Materials Technologies, 2201196</span></p>
-                                </div>
+                    <!-- Publications -->
+                    <div class="space-y-6 pt-6 border-t border-gray-800/50">
+                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                            Publications</h4>
+                        <div class="pl-0 space-y-4">
+                            <div class="space-y-1">
+                                <span class="block text-sm text-white font-light">Circulatory Support:
+                                    Artificial Muscles for the Future of Cardiovascular Assist Devices</span>
+                                <p class="text-xs text-gray-400 font-light">I. Pirozzi, A. Kight, A. Kyungwon Han,
+                                    R. Cutkosky, S.A. Dual (2022) &mdash; <span class="italic">Advanced Materials,
+                                        adma.202210713</span></p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="block text-sm text-white font-light">Electrohydraulic Vascular
+                                    Compression device (e-VaC) with integrated sensing and controls: towards adaptive
+                                    hemodynamic support of the pulmonary circulation</span>
+                                <p class="text-xs text-gray-400 font-light">I. Pirozzi, A. Kight, X. Liang, A.
+                                    Kyungwon Han, D.B. Ennis, W. Hiesinger, S.A. Dual, and M. Cutkosky (2022) &mdash; <span
+                                        class="italic">Advanced Materials Technologies, 2201196</span></p>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/Extra-vascular%20actuator-kMegv4U3.png" alt="Extra vascular actuator"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
+                    </div>
+                </div>
+            </div>
 
-                    <!-- HFpEF Support -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Soft robotic cardiac assist
-                            device for the forgotten halt of heart failure patients</h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            No effective treatment for heart failure with preserved ejection fraction (HFpEF) is
-                            available at present. HFpEF is characterized by a pathological reduction in heart
-                            compliance, which impairs the ability of the heart to fill properly and results in low
-                            cardiac efficacy. I developed a soft robotic cardiac assist device, which wraps around the
-                            aorta and reduces the pressures seen by the heart in a counter-pulsation way. Soft robotic
-                            actuators allow the device to smoothly conform to the native vasculature and will enable the
-                            miniaturization of the device for minimally invasive implantation. In the first step, the
-                            device is tested in vitro to prove pressure reduction and effects on flow fields using
-                            imaging. In the second step, an in-vivo study in pigs determines if the cardiac output of a
-                            living heart could be increased through the soft robotic cardiac assist device.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Seraina Dual</span></div>
-                            <div>Funded by: <span class="text-white">Swiss National Science Foundation</span></div>
-                            <div>In collaboration with: <span class="text-white">Stanford University (Daniel Ennis and
-                                    Alison Marsden)</span></div>
-                        </div>
+            <!-- Project: Soft robotic cardiac assist device for the forgotten halt of heart failure patients -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-32 transition-all duration-300" data-tags='["Soft robotics", "Counterpulsation"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Soft robotic cardiac assist
+                        device for the forgotten halt of heart failure patients</h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        No effective treatment for heart failure with preserved ejection fraction (HFpEF) is
+                        available at present. HFpEF is characterized by a pathological reduction in heart
+                        compliance, which impairs the ability of the heart to fill properly and results in low
+                        cardiac efficacy. I developed a soft robotic cardiac assist device, which wraps around the
+                        aorta and reduces the pressures seen by the heart in a counter-pulsation way. Soft robotic
+                        actuators allow the device to smoothly conform to the native vasculature and will enable the
+                        miniaturization of the device for minimally invasive implantation. In the first step, the
+                        device is tested in vitro to prove pressure reduction and effects on flow fields using
+                        imaging. In the second step, an in-vivo study in pigs determines if the cardiac output of a
+                        living heart could be increased through the soft robotic cardiac assist device.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/seraina" target="_blank"
+                                class="text-white hover:underline">Seraina Dual</a></div>
+                        <div>Funded by: <span class="text-white">Swiss National Science Foundation</span></div>
+                        <div>In collaboration with: <span class="text-white">Stanford University (Daniel Ennis
+                                and Alison Marsden)</span></div>
                     </div>
 
-                    <!-- Publications: HFpEF Support -->
-                    <div class="space-y-6 pt-6 mt-4 border-t border-gray-800/50">
-                        <h4
-                            class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                    <!-- Publications -->
+                    <div class="space-y-6 pt-6 border-t border-gray-800/50">
+                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
                             Publications</h4>
-                        <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
+                        <div class="pl-0 space-y-4">
                             <div class="space-y-1">
                                 <span class="block text-sm text-white font-light">An extra-aortic soft robotic
                                     cardiac support device: Patient-specific in-vitro and in-vivo evaluation</span>
@@ -368,10 +396,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-2 self-stretch">
-                    <div class="bg-[#1b1f23] rounded overflow-hidden h-full min-h-[400px] border border-gray-800">
-                        <img src="assets/images/research/cardiac_support.jpg" alt="Cardiac Support"
-                            class="w-full h-full object-cover opacity-80 hover:opacity-100 transition duration-700">
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/Soft%20Robotic%20Support%20Heart-DmgJLbst.png" alt="Soft robotics for the heart"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
                     </div>
                 </div>
             </div>
@@ -381,226 +410,236 @@
 
         <!-- SECTION 3: Test-rigs for patient-specific insight -->
         <section id="test-rigs" class="py-20">
-            <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Experimental &
-                Modeling</span>
-            <div class="grid md:grid-cols-5 gap-12 items-start">
-                <div class="md:col-span-3 space-y-8">
-                    <h2 class="text-3xl text-kth-cerulean font-light font-heading">Test-rigs for patient-specific
-                        insight</h2>
-                    <p class="text-white leading-loose font-light text-sm">
-                        In recent years, biomimetic design from the field of soft robotics play an increasing role in
-                        mimicking physiological phenomena on the benchtop. From an ethical perspective, benchtop and
-                        computational testing mitigates the need for excessive animal testing, a common practice in
-                        medical device innovations. Our research focuses on enabling patient-specific testing with the
-                        goal to include underrepresented patient groups such as women and children early in the design
-                        process. As a part of this work, we have built <a
-                            href="https://www.youtube.com/watch?v=p_-7MmHzErs" target="_blank"
-                            class="text-kth-cerulean underline">Scandinavia's first hybrid mock circulatory loop</a>,
-                        which enables testing of physical prototypes in interaction with a virtual model of the patient.
+            <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Test-rigs
+                fo patient-specific insight</span>
+            <h2 class="text-3xl text-kth-cerulean font-light font-heading mb-6">Test-rigs for patient-specific
+                insight</h2>
+            <p class="text-white leading-loose font-light text-sm mb-12 max-w-4xl">
+                In recent years, biomimetic design from the field of soft robotics play an increasing role in
+                mimicking physiological phenomena on the benchtop. From an ethical perspective, benchtop and
+                computational testing mitigates the need for excessive animal testing, a common practice in
+                medical device innovations. Our research focuses on enabling patient-specific testing with the
+                goal to include underrepresented patient groups such as women and children early in the design
+                process. As a part of this work, we have built <a
+                    href="https://www.youtube.com/watch?v=p_-7MmHzErs" target="_blank"
+                    class="text-kth-cerulean underline">Scandinavia's first hybrid mock circulatory loop</a>,
+                which enables testing of physical prototypes in interaction with a virtual model of the patient.
+            </p>
+
+            <!-- Project: CardioLoop -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Magnetic Resonance Imaging", "Soft robotics", "Biomechanics"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">CardioLoop: A versatile
+                        hybrid mock circulatory loop for medical device testing</h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        “I feel satisfied as this grant recognises our work in animal-free testing of mechanical
+                        assist devices and artificial hearts,” Dual says.
+                        In the project, the researchers will develop test rigs that allow for patient-specific
+                        testing in combination with magnetic resonance imaging of 4-dimensional flow fields. In
+                        contrast to other systems, Dual explains, they can test medical devices in dynamic
+                        interaction with the human cardiovascular system.
+                        “This allows us to simulate not only average conditions but also tune to patient-specific
+                        parameters and simulate sleep or exercise. In this way, we become a realistic alternative to
+                        animal trials.”
                     </p>
-
-                    <!-- CardioLoop -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">CardioLoop: A versatile
-                            hybrid mock circulatory loop for medical device testing</h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            “I feel satisfied as this grant recognises our work in animal-free testing of mechanical
-                            assist devices and artificial hearts,” Dual says.
-                            In the project, the researchers will develop test rigs that allow for patient-specific
-                            testing in combination with magnetic resonance imaging of 4-dimensional flow fields. In
-                            contrast to other systems, Dual explains, they can test medical devices in dynamic
-                            interaction with the human cardiovascular system.
-                            “This allows us to simulate not only average conditions but also tune to patient-specific
-                            parameters and simulate sleep or exercise. In this way, we become a realistic alternative to
-                            animal trials.”
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Seraina Dual</span></div>
-                            <div>Funded by: <span class="text-white">Vetenskapsrådet, Swedish Research Foundation</span>
-                            </div>
-                            <div>In collaboration with: <span class="text-white">Asst. Prof. David Marlevi, Karolinska
-                                    Institute</span></div>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/seraina" target="_blank"
+                                class="text-white hover:underline">Seraina Dual</a></div>
+                        <div>Funded by: <span class="text-white">Vetenskapsrådet, Swedish Research
+                                Foundation</span>
                         </div>
+                        <div>In collaboration with: <span class="text-white">Asst. Prof. David Marlevi,
+                                Karolinska Institute</span></div>
                     </div>
-
-                    <!-- Patient-specific computational modeling -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Patient-specific
-                            computational modeling</h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            As cardiovascular diseases continue to be the leading cause of mortality worldwide,
-                            computational and hybrid testing of treatment strategies such as heart pumps present a
-                            promising avenue for saving lives. However, these models are most often generic and lack
-                            patient-specific insight.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Fangnan Xu</span></div>
-                            <div>Funded by: <span class="text-white">VINNOVA (Strategic innovation programme ‘Smarter
-                                    Electronics Systems’)</span></div>
-                            <div>In collaboration with: <span class="text-white">Scandinavian Realheart</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Pre-clinical evaluation of TAH -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Pre-clinical evaluation of
-                            the physiological control of a total artificial heart</h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            The focus of this research is to advance the knowledge of total artificial hearts as a
-                            viable therapeutic option for patients suffering from heart failure. Using a hybrid mock
-                            circulatory loop, we can generate real-time physiological hemodynamic conditions. This
-                            dynamic testing platform allows us to simulate various patient states, including exercise
-                            conditions, offering valuable insights for improving the design of artificial hearts and
-                            other cardiovascular assist devices.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Seraina Dual</span></div>
-                            <div>Funding: <span class="text-white">VINNOVA (Strategic innovation programme ‘Smarter
-                                    Electronics Systems’)</span></div>
-                            <div>In collaboration with: <span class="text-white">Scandinavian Realheart</span></div>
-                        </div>
-
-                        <!-- Publications: TAH -->
-                        <div class="space-y-6 pt-6 mt-4 border-t border-gray-800/50">
-                            <h4
-                                class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
-                                Publications</h4>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2024</h5>
-                                <div class="space-y-1">
-                                    <span class="block text-sm text-white font-light transition">Physiological response
-                                        assessment of total artificial hearts using a hybrid mock loop</span>
-                                    <p class="text-xs text-gray-400 font-light">E. Perra, D. Jonasson, S. Faisal Zaman,
-                                        T. Finocchiaro, I. L. Perkins, S.A. Dual (2024) &mdash; <span
-                                            class="italic">International Society of Mechanical Circulatory Support,
-                                            Japan</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Data-driven cardiovascular assist devices -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
-                            <a href="https://www.digitalfutures.kth.se/research/research-pairs/ongoing-research-pairs-projects/data-driven-cardiovascular-assist-devices/"
-                                target="_blank" class="hover:underline">Data-driven cardiovascular assist devices</a>
-                        </h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            This research aims at designing and optimizing an algorithm for tuning the parameters of a
-                            cardiovascular model to generate patient-specific simulations. The goal is to enhance the
-                            accuracy and performance of cardiovascular models, ultimately facilitating the creation of
-                            patient-specific digital twins.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Seraina Dual</span></div>
-                            <div>Funded by: <span class="text-white">Digital Futures</span></div>
-                        </div>
-
-                        <!-- Publications: Data-driven -->
-                        <div class="space-y-6 pt-6 mt-4 border-t border-gray-800/50">
-                            <h4
-                                class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
-                                Publications</h4>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2024</h5>
-                                <div class="space-y-1">
-                                    <span class="block text-sm text-white font-light transition">Particle Swarm
-                                        Optimisation for patient-specific tuning of a cardiovascular model</span>
-                                    <p class="text-xs text-gray-400 font-light">E. Perra, G. Uribarri, E. Fransen, S.A.
-                                        Dual (2024) &mdash; <span class="italic">European Society of Biomechanics,
-                                            Edinburgh</span></p>
-                                </div>
-                            </div>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2023</h5>
-                                <div class="space-y-1">
-                                    <a href="https://doi.org/10.1007/978-3-031-35302-4_52" target="_blank"
-                                        class="block text-sm text-white underline font-light transition">Showcasing the
-                                        capabilities of a hybrid mock circulation loop for Investigation of Aortic
-                                        coarctation</a>
-                                    <p class="text-xs text-gray-400 font-light">E. Perra, O. Kreis, S.A. Dual (2023)
-                                        &mdash; <span class="italic">FIMH 2023, Springer, Cham.</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Aortic coarctation biomechanics -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
-                            Fundamental understanding of aortic coarctation biomechanics during exercise
-                        </h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            The aim of this study was to predict blood pressure gradient (∆P) across the Coarctation of
-                            the aorta (CoA) during exercise through in vitro measurements acquired in compliant aortic
-                            phantoms incorporated in a hybrid mock circulatory loop tuned to patient-specific medical
-                            record data.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Seraina Dual</span></div>
-                            <div>Funded by: <span class="text-white">Scandinavian-American Foundation</span></div>
-                            <div>In collaboration with: <span class="text-white">Daniel Ennis, Alison Marsden (Stanford
-                                    University) and Doff McElHinney (Stanford Medicine)</span></div>
-                        </div>
-
-                        <!-- Publications: Aortic CoA -->
-                        <div class="space-y-6 pt-6 mt-4 border-t border-gray-800/50">
-                            <h4
-                                class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
-                                Publications</h4>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2025</h5>
-                                <div class="space-y-1">
-                                    <a href="http://kth.diva-portal.org/smash/record.jsf?pid=diva2:1990376"
-                                        target="_blank"
-                                        class="block text-sm text-white underline font-light transition">Experiments and
-                                        Simulations to Assess Exercise-Induced Pressure Drop Across Aortic
-                                        Coarctations</a>
-                                    <p class="text-xs text-gray-400 font-light">P. J. Nair et al. (2025) &mdash; <span
-                                            class="italic">Journal of Biomechanical Engineering, vol. 147, no. 7</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2024</h5>
-                                <div class="space-y-1">
-                                    <span class="block text-sm text-white font-light transition">Patient-variability in
-                                        exercise-induced pressure drop across aortic coarctations</span>
-                                    <p class="text-xs text-gray-400 font-light">P. Nair, E. Perra, D.B. McElhinney, A.L.
-                                        Marsden, D.B. Ennis, S.A. Dual (2024) &mdash; <span class="italic">European
-                                            Society of Biomechanics, Edinburgh (Nominated for Poster Award)</span></p>
-                                </div>
-                            </div>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2023</h5>
-                                <div class="space-y-1">
-                                    <a href="http://kth.diva-portal.org/smash/record.jsf?pid=diva2:1804609"
-                                        target="_blank"
-                                        class="block text-sm text-white underline font-light transition">Hemodynamics in
-                                        Patients with Aortic Coarctation: A Comparison of in vivo 4D-Flow MRI and FSI
-                                        Simulation</a>
-                                    <p class="text-xs text-gray-400 font-light">P. J. Nair et al. (2023) &mdash; <span
-                                            class="italic">FIMH 2023, pp. 515-523</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
-                <!-- Images Area -->
-                <div class="md:col-span-2 space-y-8">
-                    <div class="bg-[#1b1f23] rounded overflow-hidden border border-gray-800">
-                        <img src="assets/images/research/test_rigs.jpg" alt="Test Rigs"
-                            class="w-full h-auto opacity-80 transition duration-700">
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/MRI_MCL_Schematic-DswB9Vu0.png" alt="MRI MCL Schematic"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
                     </div>
-                    <div class="bg-[#1b1f23] rounded overflow-hidden border border-gray-800">
-                        <img src="assets/images/research/tah.jpg" alt="TAH"
-                            class="w-full h-auto opacity-80 transition duration-700">
+                </div>
+            </div>
+
+            <!-- Project: Patient-specific computational modeling -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Computational Modeling", "Optimization"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Patient-specific
+                        computational modeling</h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        As cardiovascular diseases continue to be the leading cause of mortality worldwide,
+                        computational and hybrid testing of treatment strategies such as heart pumps present a
+                        promising avenue for saving lives. However, these models are most often generic and lack
+                        patient-specific insight.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/fangnan" target="_blank"
+                                class="text-white hover:underline">Fangnan Xu</a></div>
+                        <div>Funded by: <span class="text-white">VINNOVA (Strategic innovation programme
+                                ‘Smarter Electronics Systems’)</span></div>
+                        <div>In collaboration with: <span class="text-white">Scandinavian Realheart</span></div>
                     </div>
-                    <div class="bg-[#1b1f23] rounded overflow-hidden border border-gray-800">
-                        <img src="assets/images/research/modeling.jpg" alt="Modeling"
-                            class="w-full h-auto opacity-80 transition duration-700">
+                </div>
+                <div class="md:col-span-2"></div>
+            </div>
+
+            <!-- Project: Pre-clinical evaluation of TAH -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Biomechanics", "Cardiovascular modeling"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Pre-clinical evaluation of
+                        the physiological control of a total artificial heart</h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        The focus of this research is to advance the knowledge of total artificial hearts as a
+                        viable therapeutic option for patients suffering from heart failure. Using a hybrid mock
+                        circulatory loop, we can generate real-time physiological hemodynamic conditions. This
+                        dynamic testing platform allows us to simulate various patient states, including exercise
+                        conditions, offering valuable insights for improving the design of artificial hearts and
+                        other cardiovascular assist devices.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/seraina" target="_blank"
+                                class="text-white hover:underline">Seraina Dual</a></div>
+                        <div>Funding: <span class="text-white">VINNOVA (Strategic innovation programme ‘Smarter
+                                Electronics Systems’)</span></div>
+                        <div>In collaboration with: <span class="text-white">Scandinavian Realheart</span></div>
+                    </div>
+
+                    <!-- Publications -->
+                    <div class="space-y-6 pt-6 border-t border-gray-800/50">
+                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                            Publications</h4>
+                        <div class="pl-0 space-y-4">
+                            <div class="space-y-1">
+                                <span class="block text-sm text-white font-light transition">Physiological response
+                                    assessment of total artificial hearts using a hybrid mock loop</span>
+                                <p class="text-xs text-gray-400 font-light">E. Perra, D. Jonasson, S. Faisal Zaman,
+                                    T. Finocchiaro, I. L. Perkins, S.A. Dual (2024) &mdash; <span
+                                        class="italic">International Society of Mechanical Circulatory Support,
+                                        Japan</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="assets/images/TAH_phys_control.png" alt="TAH"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: Data-driven cardiovascular assist devices -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Computational Modeling", "Cardiovascular modeling"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
+                        <a href="https://www.digitalfutures.kth.se/research/research-pairs/ongoing-research-pairs-projects/data-driven-cardiovascular-assist-devices/"
+                            target="_blank" class="hover:underline">Data-driven cardiovascular assist devices</a>
+                    </h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        This research aims at designing and optimizing an algorithm for tuning the parameters of a
+                        cardiovascular model to generate patient-specific simulations. The goal is to enhance the
+                        accuracy and performance of cardiovascular models, ultimately facilitating the creation of
+                        patient-specific digital twins.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/seraina" target="_blank"
+                                class="text-white hover:underline">Seraina Dual</a></div>
+                        <div>Funded by: <span class="text-white">Digital Futures</span></div>
+                    </div>
+
+                    <!-- Publications -->
+                    <div class="space-y-6 pt-6 border-t border-gray-800/50">
+                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                            Publications</h4>
+                        <div class="pl-0 space-y-4">
+                            <div class="space-y-1">
+                                <span class="block text-sm text-white font-light transition">Particle Swarm
+                                    Optimisation for patient-specific tuning of a cardiovascular model</span>
+                                <p class="text-xs text-gray-400 font-light">E. Perra, G. Uribarri, E. Fransen, S.A.
+                                    Dual (2024) &mdash; <span class="italic">European Society of Biomechanics,
+                                        Edinburgh</span></p>
+                            </div>
+                            <div class="space-y-1">
+                                <a href="https://doi.org/10.1007/978-3-031-35302-4_52" target="_blank"
+                                    class="block text-sm text-white underline font-light transition">Showcasing the
+                                    capabilities of a hybrid mock circulation loop for Investigation of Aortic
+                                    coarctation</a>
+                                <p class="text-xs text-gray-400 font-light">E. Perra, O. Kreis, S.A. Dual (2023)
+                                    &mdash; <span class="italic">FIMH 2023, Springer, Cham.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/Data-driven%20device%20design-CyazjGSJ.png"
+                            alt="data-driven-cardiovascular-assist-devices"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: Fundamental understanding of aortic coarctation biomechanics during exercise -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-32 transition-all duration-300" data-tags='["Biomechanics", "Cardiovascular modeling"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
+                        Fundamental understanding of aortic coarctation biomechanics during exercise
+                    </h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        The aim of this study was to predict blood pressure gradient (∆P) across the Coarctation of
+                        the aorta (CoA) during exercise through in vitro measurements acquired in compliant aortic
+                        phantoms incorporated in a hybrid mock circulatory loop tuned to patient-specific medical
+                        record data.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/seraina" target="_blank"
+                                class="text-white hover:underline">Seraina Dual</a></div>
+                        <div>Funded by: <span class="text-white">Scandinavian-American Foundation</span></div>
+                        <div>In collaboration with: <span class="text-white">Daniel Ennis, Alison Marsden
+                                (Stanford University) and Doff McElHinney (Stanford Medicine)</span></div>
+                    </div>
+
+                    <!-- Publications -->
+                    <div class="space-y-6 pt-6 border-t border-gray-800/50">
+                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                            Publications</h4>
+                        <div class="pl-0 space-y-4">
+                            <div class="space-y-1">
+                                <a href="http://kth.diva-portal.org/smash/record.jsf?pid=diva2:1990376"
+                                    target="_blank"
+                                    class="block text-sm text-white underline font-light transition">Experiments and
+                                    Simulations to Assess Exercise-Induced Pressure Drop Across Aortic
+                                    Coarctations</a>
+                                <p class="text-xs text-gray-400 font-light">P. J. Nair et al. (2025) &mdash; <span
+                                        class="italic">Journal of Biomechanical Engineering, vol. 147, no. 7</span>
+                                </p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="block text-sm text-white font-light transition">Patient-variability in
+                                    exercise-induced pressure drop across aortic coarctations</span>
+                                <p class="text-xs text-gray-400 font-light">P. Nair, E. Perra, D.B. McElhinney, A.L.
+                                    Marsden, D.B. Ennis, S.A. Dual (2024) &mdash; <span class="italic">European
+                                        Society of Biomechanics, Edinburgh (Nominated for Poster Award)</span></p>
+                            </div>
+                            <div class="space-y-1">
+                                <a href="http://kth.diva-portal.org/smash/record.jsf?pid=diva2:1804609"
+                                    target="_blank"
+                                    class="block text-sm text-white underline font-light transition">Hemodynamics in
+                                    Patients with Aortic Coarctation: A Comparison of in vivo 4D-Flow MRI and FSI
+                                    Simulation</a>
+                                <p class="text-xs text-gray-400 font-light">P. J. Nair et al. (2023) &mdash; <span
+                                        class="italic">FIMH 2023, pp. 515-523</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/Aortic%20coarctation-Ctfx0tzW.png" alt="Aortic Coarctation"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
                     </div>
                 </div>
             </div>
@@ -610,73 +649,66 @@
 
         <!-- SECTION 4: Physiology-guided signal processing -->
         <section id="signal-processing" class="py-20">
-            <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Signal
-                Processing</span>
-            <div class="grid md:grid-cols-5 gap-12 items-start">
-                <div class="md:col-span-3 space-y-8">
-                    <h2 class="text-3xl text-kth-cerulean font-light font-heading">Physiology-guided signal processing
-                    </h2>
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Digital Health Tools for
-                            non-invasive diagnosis of lung disease</h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            Pulmonary hypertension (PH) is a strong prognostic factor in many cardiovascular diseases,
-                            such as heart failure, valvular disease and congenital heart disease. Driven by the need for
-                            reliable non-invasive techniques, engineering tools must be developed to monitor, detect and
-                            predict PH using algorithms which integrate standard echocardiographic images of tricuspid
-                            regurgitant and pulmonary flow. Artificial intelligence methods can automate such image
-                            analyses, improving robustness.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Seraina Dual</span></div>
-                        </div>
+            <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Physiologically-guided
+                signal processing</span>
+            <h2 class="text-3xl text-kth-cerulean font-light font-heading mb-12">Physiology-guided signal processing</h2>
 
-                        <!-- Publications: Signal Processing -->
-                        <div class="space-y-6 pt-6 mt-4 border-t border-gray-800/50">
-                            <h4
-                                class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
-                                Publications</h4>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2024</h5>
-                                <div class="space-y-1">
-                                    <a href="https://cinc.org/archives/2024/pdf/CinC2024-430.pdf" target="_blank"
-                                        class="block text-sm text-white underline font-light transition">Enhanced
-                                        Quality Assessment of Echocardiographic Images for Pulmonary Hypertension Using
-                                        Convolutional Neural Networks</a>
-                                    <p class="text-xs text-gray-400 font-light">P. Sattar, C. Verdonk, F. Hermansson, X.
-                                        Tang, A. Marsden, F. Haddad, S.A. Dual (2024) &mdash; <span
-                                            class="italic">Computing in Cardiology (CinC), pp. 1-4</span></p>
-                                </div>
+            <!-- Project: Digital Health Tools for non-invasive diagnosis of lung disease -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-32 transition-all duration-300" data-tags='["Physiology", "Computational Modeling"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Digital Health Tools for
+                        non-invasive diagnosis of lung disease</h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        Pulmonary hypertension (PH) is a strong prognostic factor in many cardiovascular diseases,
+                        such as heart failure, valvular disease and congenital heart disease. Driven by the need for
+                        reliable non-invasive techniques, engineering tools must be developed to monitor, detect and
+                        predict PH using algorithms which integrate standard echocardiographic images of tricuspid
+                        regurgitant and pulmonary flow. Artificial intelligence methods can automate such image
+                        analyses, improving robustness.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/seraina" target="_blank"
+                                class="text-white hover:underline">Seraina Dual</a></div>
+                    </div>
+
+                    <!-- Publications -->
+                    <div class="space-y-6 pt-6 border-t border-gray-800/50">
+                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                            Publications</h4>
+                        <div class="pl-0 space-y-4">
+                            <div class="space-y-1">
+                                <a href="https://cinc.org/archives/2024/pdf/CinC2024-430.pdf" target="_blank"
+                                    class="block text-sm text-white underline font-light transition">Enhanced
+                                    Quality Assessment of Echocardiographic Images for Pulmonary Hypertension Using
+                                    Convolutional Neural Networks</a>
+                                <p class="text-xs text-gray-400 font-light">P. Sattar, C. Verdonk, F. Hermansson,
+                                    X. Tang, A. Marsden, F. Haddad, S.A. Dual (2024) &mdash; <span
+                                        class="italic">Computing in Cardiology (CinC), pp. 1-4</span></p>
                             </div>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2022</h5>
-                                <div class="space-y-1">
-                                    <a href="https://onlinelibrary.wiley.com/doi/10.1002/pul2.12125" target="_blank"
-                                        class="block text-sm text-white underline font-light transition">Improving Right
-                                        Ventricular Systolic Pressure Estimation using a novel Doppler Signal
-                                        Interpolation Method</a>
-                                    <p class="text-xs text-gray-400 font-light">S.A. Dual, C. Verdonk, M. Amsallem, J.
-                                        Pham, C. Obasohan, P. Nataf, D.B. McElHinney, T. Kuznetsova, R. Zamanian, J.
-                                        Feinstein, A. Marsden, F. Haddad (2022) &mdash; <span class="italic">Pulmonary
-                                            Circulation, 12:e12125</span></p>
-                                </div>
+                            <div class="space-y-1">
+                                <a href="https://onlinelibrary.wiley.com/doi/10.1002/pul2.12125" target="_blank"
+                                    class="block text-sm text-white underline font-light transition">Improving
+                                    Right Ventricular Systolic Pressure Estimation using a novel Doppler Signal
+                                    Interpolation Method</a>
+                                <p class="text-xs text-gray-400 font-light">S.A. Dual, C. Verdonk, M. Amsallem, J.
+                                    Pham, C. Obasohan, P. Nataf, D.B. McElHinney, T. Kuznetsova, R. Zamanian, J.
+                                    Feinstein, A. Marsden, F. Haddad (2022) &mdash; <span class="italic">Pulmonary
+                                        Circulation, 12:e12125</span></p>
                             </div>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">Manuscript Submitted</h5>
-                                <div class="space-y-1">
-                                    <span class="block text-sm text-white font-light">Cardiac Contour Analysis: A Novel
-                                        Method for Right Ventricular Assessment in Healthy Controls and Patients with
-                                        Pulmonary Arterial Hypertension</span>
-                                    <p class="text-xs text-gray-400 font-light">F.C. Nordgren Hermansson et al.</p>
-                                </div>
+                            <div class="space-y-1">
+                                <span class="block text-sm text-white font-light">Cardiac Contour Analysis: A
+                                    Novel Method for Right Ventricular Assessment in Healthy Controls and Patients with
+                                    Pulmonary Arterial Hypertension</span>
+                                <p class="text-xs text-gray-400 font-light">F.C. Nordgren Hermansson et al.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-2">
-                    <div class="bg-[#1b1f23] rounded overflow-hidden border border-gray-800">
-                        <img src="assets/images/research/signal_processing.jpg" alt="Signal Processing"
-                            class="w-full h-full object-cover opacity-80 transition duration-700">
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/PH_Signal_Processing-CMwRD47A.png" alt="Signal Processing"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
                     </div>
                 </div>
             </div>
@@ -686,113 +718,127 @@
 
         <!-- SECTION 5: Implantable and wearable sensors for health monitoring -->
         <section id="implantable-sensors" class="py-20">
-            <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Sensors &
-                Monitoring</span>
-            <div class="grid md:grid-cols-5 gap-12 items-start">
-                <div class="md:col-span-3 space-y-8">
-                    <h2 class="text-3xl text-kth-cerulean font-light font-heading">Implantable and wearable sensors for
-                        health monitoring</h2>
+            <span class="text-white text-xs tracking-[0.2em] uppercase block mb-4 font-heading">Implantable
+                and wearable sensors for health monitoring</span>
+            <h2 class="text-3xl text-kth-cerulean font-light font-heading mb-12">Implantable and wearable sensors for
+                health monitoring</h2>
 
-                    <!-- TENG Sensors -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Biocompatible and
-                            biodegradable materials based self-powered wearable sensors for healthcare monitoring</h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            Wearable healthcare monitoring systems can monitor vital health parameters such as heart
-                            rate, respiration, and movement which can be related with various diseases. Triboelectric
-                            nanogenerators (TENGs) are devices which can convert mechanical energy into electrical
-                            energy without the need of batteries. TENG based healthcare sensors offer advantages
-                            including continuous operation, minimal device complexity, improved biocompatibility, and
-                            great wearability.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Swati Panda</span></div>
-                            <div>Funded by: <span class="text-white">Digital Futures</span></div>
-                            <div>In collaboration with: <span class="text-white">Asst. Prof. Erica Zeglio, Stockholm
-                                    University</span></div>
-                        </div>
+            <!-- Project: TENG Sensors -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Wearable technology"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Biocompatible and
+                        biodegradable materials based self-powered wearable sensors for healthcare monitoring</h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        Wearable healthcare monitoring systems can monitor vital health parameters such as heart
+                        rate, respiration, and movement which can be related with various diseases. Triboelectric
+                        nanogenerators (TENGs) are devices which can convert mechanical energy into electrical
+                        energy without the need of batteries. TENG based healthcare sensors offer advantages
+                        including continuous operation, minimal device complexity, improved biocompatibility, and
+                        great wearability.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/swatip" target="_blank"
+                                class="text-white hover:underline">Swati Panda</a></div>
+                        <div>Funded by: <span class="text-white">Digital Futures</span></div>
+                        <div>In collaboration with: <span class="text-white">Asst. Prof. Erica Zeglio, Stockholm
+                                University</span></div>
+                    </div>
+                </div>
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-[#1b1f23] rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/Wound%20Healing-CVmxhyGP.jpg" alt="Wound Healing"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: Post-surgical Monitoring -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-24 transition-all duration-300" data-tags='["Implantable sensors", "Soft robotics"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
+                        <a href="https://www.digitalfutures.kth.se/research/research-pairs/ongoing-research-pairs-projects/bioact-self-powered-biodegradable-pressure-sensor-for-wireless-post-surgical-patient-management/"
+                            target="_blank" class="hover:underline">Self-powered biodegradable pressure sensor for
+                            post-surgical monitoring</a>
+                    </h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        Digital sensors enabling continuous monitoring of blood pressure would allow early discovery
+                        of blood vessel collapse or clot – primary causes of readmission after surgery. Our goal is
+                        to develop a self-powered biodegradable pressure sensor with the potential for wireless
+                        signal transfer that eliminates the need for device-extraction surgeries.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/mudge" target="_blank"
+                                class="text-white hover:underline">Kyle Mudge</a></div>
+                        <div>Funded by: <span class="text-white">Digital Futures</span></div>
+                        <div>In collaboration with: <span class="text-white">Asst. Prof. Erica Zeglio, Stockholm
+                                University</span></div>
+                    </div>
+                </div>
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/BioAct-CVTqMItV.jpg" alt="Bio Act"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: Highly durable soft strain sensor -->
+            <div class="project-card grid md:grid-cols-5 gap-12 items-start mb-32 transition-all duration-300" data-tags='["Implantable sensors", "Soft robotics"]'>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Highly durable soft strain
+                        sensor</h3>
+                    <p class="text-white leading-relaxed font-light text-sm">
+                        Building on previous work introducing a durable, soft strain sensor, this research presents
+                        VITALS, an implantable strain sensing network that enables continuous biventricular,
+                        multiaxial monitoring of cardiac function. Animal studies demonstrate VITALS’ ability to
+                        track epicardial strain with high fidelity and detect preload changes rapidly.
+                    </p>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
+                        <div>Contact: <a href="https://www.kth.se/profile/seraina" target="_blank"
+                                class="text-white hover:underline">Seraina Dual</a></div>
+                        <div>In collaboration with: <span class="text-white">Prof. Mark Cutkosky, Stanford
+                                University</span></div>
                     </div>
 
-                    <!-- Post-surgical Monitoring -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">
-                            <a href="https://www.digitalfutures.kth.se/research/research-pairs/ongoing-research-pairs-projects/bioact-self-powered-biodegradable-pressure-sensor-for-wireless-post-surgical-patient-management/"
-                                target="_blank" class="hover:underline">Self-powered biodegradable sensor for
-                                post-surgical monitoring</a>
-                        </h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            Digital sensors enabling continuous monitoring of blood pressure would allow early discovery
-                            of blood vessel collapse or clot – primary causes of readmission after surgery. Our goal is
-                            to develop a self-powered biodegradable pressure sensor with the potential for wireless
-                            signal transfer that eliminates the need for device-extraction surgeries.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Kyle Mudge</span></div>
-                            <div>Funded by: <span class="text-white">Digital Futures</span></div>
-                            <div>In collaboration with: <span class="text-white">Asst. Prof. Erica Zeglio, Stockholm
-                                    University</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Highly Durable Soft Strain Sensor -->
-                    <div class="pt-8 border-t border-gray-800/50">
-                        <h3 class="text-xl text-kth-cerulean font-light mb-4 font-heading">Highly durable soft strain
-                            sensor</h3>
-                        <p class="text-white leading-relaxed font-light text-sm mb-4">
-                            Building on previous work introducing a durable, soft strain sensor, this research presents
-                            VITALS, an implantable strain sensing network that enables continuous biventricular,
-                            multiaxial monitoring of cardiac function. Animal studies demonstrate VITALS’ ability to
-                            track epicardial strain with high fidelity and detect preload changes rapidly.
-                        </p>
-                        <div class="text-xs tracking-widest text-gray-500 uppercase space-y-1 font-heading">
-                            <div>Contact: <span class="text-white">Seraina Dual</span></div>
-                            <div>In collaboration with: <span class="text-white">Prof. Mark Cutkosky, Stanford
-                                    University</span></div>
-                        </div>
-
-                        <!-- Publications: Implantable Sensors -->
-                        <div class="space-y-6 pt-6 mt-4 border-t border-gray-800/50">
-                            <h4
-                                class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
-                                Publications</h4>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2024</h5>
-                                <div class="space-y-1">
-                                    <span class="block text-sm text-white font-light">VITALS: An Implantable Sensor
-                                        Network for Postoperative Cardiac Monitoring in Heart Failure Patients</span>
-                                    <p class="text-xs text-gray-400 font-light">A. Kight, M. Haidar, M. Shibata, Y. Ono,
-                                        G. Ikeda, A. Sharir, F. Semproni, Y. Palagani, S. Taheri, A. Kyungwon Han, M.
-                                        Ma,
-                                        K. Riemer, D.B. McElhinney, S.A. Dual, M. Cutkosky &mdash; <span
-                                            class="italic">npj Biomed. Innov. (In Press)</span></p>
-                                </div>
+                    <!-- Publications -->
+                    <div class="space-y-6 pt-6 border-t border-gray-800/50">
+                        <h4 class="text-xs text-white uppercase tracking-widest font-heading border-b border-gray-800 pb-2">
+                            Publications</h4>
+                        <div class="pl-0 space-y-4">
+                            <div class="space-y-1">
+                                <span class="block text-sm text-white font-light">VITALS: An Implantable Sensor
+                                    Network for Postoperative Cardiac Monitoring in Heart Failure Patients</span>
+                                <p class="text-xs text-gray-400 font-light">A. Kight, M. Haidar, M. Shibata, Y. Ono,
+                                    G. Ikeda, A. Sharir, F. Semproni, Y. Palagani, S. Taheri, A. Kyungwon Han, M. Ma,
+                                    K. Riemer, D.B. McElhinney, S.A. Dual, M. Cutkosky &mdash; <span
+                                        class="italic">npj Biomed. Innov. (In Press)</span></p>
                             </div>
-                            <div class="border-l-[1px] border-kth-cerulean pl-4 space-y-3">
-                                <h5 class="text-xs text-gray-500 font-light mb-1">2023</h5>
-                                <div class="space-y-1">
-                                    <a href="http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:1748271"
-                                        target="_blank"
-                                        class="block text-sm text-white underline font-light transition">Decoupling
-                                        Transmission and Transduction for Improved Durability of Highly Stretchable,
-                                        Soft Strain Sensing</a>
-                                    <p class="text-xs text-gray-400 font-light">A. Kight et al. (2023) &mdash; <span
-                                            class="italic">Sensors, vol. 23, no. 4</span></p>
-                                </div>
-                                <div class="space-y-1">
-                                    <span class="block text-sm text-white font-light">Implantable, Stretchable Sensor
-                                        for Continuous Biomechanical Monitoring of the Heart</span>
-                                    <p class="text-xs text-gray-400 font-light">A. Kight, M. Cutkosky, D.M. McElHinney,
-                                        I. Pirozzi, X. Liang, S. Dual, K.W. Han (2023) &mdash; <span
-                                            class="italic">Invention disclosure, USPTO 63/443421</span></p>
-                                </div>
+                            <div class="space-y-1">
+                                <a href="http://kth.diva-portal.org/smash/record.jsf?dswid=3396&pid=diva2:1748271"
+                                    target="_blank"
+                                    class="block text-sm text-white underline font-light transition">Decoupling
+                                    Transmission and Transduction for Improved Durability of Highly Stretchable,
+                                    Soft Strain Sensing</a>
+                                <p class="text-xs text-gray-400 font-light">A. Kight et al. (2023) &mdash; <span
+                                        class="italic">Sensors, vol. 23, no. 4</span></p>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="block text-sm text-white font-light">Implantable, Stretchable Sensor
+                                    for Continuous Biomechanical Monitoring of the Heart</span>
+                                <p class="text-xs text-gray-400 font-light">A. Kight, M. Cutkosky, D.M. McElHinney,
+                                    I. Pirozzi, X. Liang, S. Dual, K.W. Han (2023) &mdash; <span
+                                        class="italic">Invention disclosure, USPTO 63/443421</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-2">
-                    <div class="bg-[#1b1f23] rounded overflow-hidden border border-gray-800">
-                        <img src="assets/images/research/wearable_sensors.jpg" alt="Wearable Sensors"
-                            class="w-full h-full object-cover opacity-80 transition duration-700">
+                <!-- Image on the Right -->
+                <div class="md:col-span-2 self-start">
+                    <div class="w-full aspect-square bg-white rounded-xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="/assets/Durable%20strain%20sensor-DYgJCEP6.png" alt="Durable strain sensor"
+                            class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-700">
                     </div>
                 </div>
             </div>
@@ -804,7 +850,8 @@
     <footer class="bg-kth-dark py-16 border-t border-gray-900">
         <div class="container mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
             <div class="mb-8 md:mb-0">
-                <div class="text-white text-lg tracking-widest uppercase font-bold mb-4 font-heading">KTH I-HeaL</div>
+                <div class="text-white text-lg tracking-widest uppercase font-bold mb-4 font-heading">KTH I-HeaL
+                </div>
                 <div class="text-white text-sm font-light leading-relaxed">
                     KTH Royal Institute of Technology<br>
                     Hälsovägen 11<br>
@@ -821,6 +868,105 @@
             &copy; 2026 INTELLIGENT HEART TECHNOLOGY LAB
         </div>
     </footer>
+
+    <!-- Tag Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterContainer = document.getElementById('tag-filters');
+            const buttons = filterContainer.querySelectorAll('.tag-btn');
+            const allBtn = document.getElementById('tag-all');
+            const cards = document.querySelectorAll('.project-card');
+            const sections = document.querySelectorAll('main > section');
+
+            // Function to filter projects
+            const filterProjects = () => {
+                const activeTags = Array.from(buttons)
+                    .filter(btn => btn.classList.contains('active') && btn !== allBtn)
+                    .map(btn => btn.getAttribute('data-tag'));
+
+                if (activeTags.length === 0) {
+                    // Set "All" button as active
+                    allBtn.classList.add('active', 'bg-kth-cerulean', 'border-kth-cerulean', 'text-white');
+                    allBtn.classList.remove('border-white/10', 'bg-kth-dark/60', 'text-gray-300');
+                    allBtn.style.boxShadow = '0 0 15px rgba(0,123,167,0.3)';
+                    
+                    // Show all cards
+                    cards.forEach(card => {
+                        card.classList.remove('hidden');
+                    });
+                } else {
+                    // Deactivate "All" button
+                    allBtn.classList.remove('active', 'bg-kth-cerulean', 'border-kth-cerulean', 'text-white');
+                    allBtn.classList.add('border-white/10', 'bg-kth-dark/60', 'text-gray-300');
+                    allBtn.style.boxShadow = '';
+
+                    // Filter cards
+                    cards.forEach(card => {
+                        const cardTags = JSON.parse(card.getAttribute('data-tags') || '[]');
+                        // Multi-select matches if card has AT LEAST ONE of the active tags
+                        const matches = activeTags.some(tag => cardTags.includes(tag));
+                        if (matches) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                }
+
+                // Hide sections and hrs if no visible projects
+                sections.forEach(section => {
+                    const sectionCards = section.querySelectorAll('.project-card');
+                    const hasVisible = Array.from(sectionCards).some(card => !card.classList.contains('hidden'));
+                    
+                    // Toggle section visibility
+                    section.classList.toggle('hidden', !hasVisible);
+
+                    // Find next sibling hr if any
+                    let next = section.nextElementSibling;
+                    while (next && next.tagName !== 'HR' && next.tagName !== 'SECTION') {
+                        next = next.nextElementSibling;
+                    }
+                    if (next && next.tagName === 'HR') {
+                        next.classList.toggle('hidden', !hasVisible);
+                    }
+                });
+            };
+
+            // Click handler for tag buttons
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn === allBtn) {
+                        // Deactivate other buttons
+                        buttons.forEach(b => {
+                            if (b !== allBtn) {
+                                b.classList.remove('active', 'bg-kth-cerulean', 'border-kth-cerulean', 'text-white');
+                                b.classList.add('border-white/10', 'bg-kth-dark/60', 'text-gray-300');
+                                b.style.boxShadow = '';
+                            }
+                        });
+                        allBtn.classList.add('active', 'bg-kth-cerulean', 'border-kth-cerulean', 'text-white');
+                        allBtn.classList.remove('border-white/10', 'bg-kth-dark/60', 'text-gray-300');
+                        allBtn.style.boxShadow = '0 0 15px rgba(0,123,167,0.3)';
+                    } else {
+                        // Toggle this button
+                        const isActive = btn.classList.contains('active');
+                        if (isActive) {
+                            btn.classList.remove('active', 'bg-kth-cerulean', 'border-kth-cerulean', 'text-white');
+                            btn.classList.add('border-white/10', 'bg-kth-dark/60', 'text-gray-300');
+                            btn.style.boxShadow = '';
+                        } else {
+                            btn.classList.add('active', 'bg-kth-cerulean', 'border-kth-cerulean', 'text-white');
+                            btn.classList.remove('border-white/10', 'bg-kth-dark/60', 'text-gray-300');
+                            btn.style.boxShadow = '0 0 15px rgba(0,123,167,0.3)';
+                        }
+                    }
+                    
+                    // Run filter
+                    filterProjects();
+                });
+            });
+        });
+    </script>
 
 </body>
 

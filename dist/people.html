@@ -59,24 +59,27 @@
 
     <!-- Navbar -->
     <nav
-        class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-6 flex justify-between items-center text-white bg-kth-dark/80 backdrop-blur-sm border-b border-white/5">
+        class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center text-white bg-kth-dark/95 backdrop-blur-md border-b border-white/20">
         <a href="index.html"
             class="text-xl font-light tracking-widest uppercase hover:border-kth-cerulean border-b border-transparent transition-all duration-300 font-heading">
             KTH <span class="font-bold">I-HeaL</span>
         </a>
         <div class="hidden lg:flex space-x-8 text-xs font-light tracking-widest">
             <a href="index.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Home</a>
-            <a href="people.html" class="text-white uppercase border-b border-white">People</a>
+            <a href="people.html" class="text-white border-b border-white uppercase">People</a>
             <a href="research.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Research</a>
             <a href="index.html#news" class="hover:text-kth-cerulean transition duration-300 uppercase">News</a>
             <a href="join.html" class="hover:text-kth-cerulean transition duration-300 uppercase">Join Us</a>
         </div>
-        <div class="lg:hidden text-2xl cursor-pointer">&#9776;</div>
+        <div class="lg:hidden text-2xl cursor-pointer p-4 transition duration-300">&#9776;</div>
     </nav>
+
 
     <!-- Header -->
     <header class="pt-40 pb-20 px-6 md:px-12 text-center md:text-left container mx-auto">
-        <h1 class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4 font-heading">Meet the Team
+        <h1
+            class="text-4xl md:text-5xl font-thin tracking-widest text-white uppercase mb-4 font-heading transition-colors duration-500">
+            Meet the Team
         </h1>
         <div class="w-12 h-1 bg-kth-cerulean mx-auto md:mx-0"></div>
     </header>
@@ -87,21 +90,22 @@
         <!-- Principal Investigator -->
         <section>
             <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
-                Principal
-                Investigator</h2>
+            </h2>
             <div class="flex flex-col md:flex-row gap-12 items-center md:items-start group">
                 <div
-                    class="w-64 h-64 rounded-full overflow-hidden border-2 border-kth-cerulean/20 group-hover:border-kth-cerulean transition duration-500 relative">
-                    <img src="assets/images/members/Seraina_Dual.png" alt="Seraina Dual"
+                    class="w-64 h-64 shrink-0 rounded-full overflow-hidden border-2 border-kth-cerulean/20 group-hover:border-kth-cerulean transition duration-500 relative">
+                    <img src="/assets/Seraina_Dual-brqaxGFu.webp" alt="Seraina Dual"
                         class="w-full h-full object-cover transition duration-700">
                 </div>
                 <div class="text-center md:text-left flex-1">
-                    <h3 class="text-3xl text-white font-light tracking-wide mb-2 font-heading">Seraina Dual</h3>
-                    <p class="text-kth-cerulean text-sm tracking-widest uppercase mb-1">Assistant Professor, Docent</p>
-                    <p class="text-kth-cerulean text-xs tracking-wider uppercase mb-6">Dept. of Biomedical Engineering &
+                    <h3 class="text-3xl text-white font-light tracking-wide mb-1 font-heading">Seraina Dual</h3>
+
+                    <p class="text-kth-cerulean text-xs tracking-wider uppercase mb-6 mt-2">Assistant professor, Dept.
+                        of Biomedical
+                        Engineering &
                         Health Systems, KTH</p>
-                    <p class="text-white font-light max-w-2xl leading-relaxed">
-                        Dr. Seraina Dual is an Assistant Professor (tenure track) in Biomedical Signal Processing at the
+                    <p class="text-white font-light leading-relaxed">
+                        Dr. Seraina Dual is an assistant professor in Biomedical Signal Processing at the
                         Department of Biomedical Engineering and Health Systems leading the Intelligent Heart Technology
                         Lab (I-HeaL). The labs research ultimately aims to help predict, prevent, and treat
                         cardiovascular diseases. Motivated by health needs and inspired by engineering and control
@@ -128,16 +132,16 @@
             </div>
         </section>
 
-        <!-- PostDocs -->
+        <!-- Team Members -->
         <section>
             <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
-                Researchers</h2>
+                Team Members</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                 <!-- Swati Panda -->
                 <div class="group">
                     <div
                         class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
-                        <img src="assets/images/members/Swati_Panda.jpg" alt="Swati Panda"
+                        <img src="/assets/Swati_Panda-DEfewjYK.webp" alt="Swati Panda"
                             class="w-full h-full object-cover transition duration-500">
                     </div>
                     <h3 class="text-lg text-white font-normal mb-1 font-heading">Swati Panda</h3>
@@ -147,26 +151,27 @@
                 <div class="group">
                     <div
                         class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
-                        <img src="assets/images/members/Carina_Veil.jpg" alt="Carina Veil"
+                        <img src="/assets/Carina_Veil-CwP79PSe.webp" alt="Carina Veil"
                             class="w-full h-full object-cover transition duration-500">
                     </div>
                     <h3 class="text-lg text-white font-normal mb-1 font-heading">Carina Veil</h3>
                     <p class="text-xs text-kth-cerulean tracking-wider uppercase">PostDoc</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- PhD Students -->
-        <section>
-            <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
-                PhD Students
-            </h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                <!-- Dheeraj -->
+                <div class="group">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full bg-[#1b1f23] overflow-hidden flex items-center justify-center border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
+                        <img src="/assets/Dheeraj%20D-CIfHs0Wg.webp" alt="Dheeraj Dasari"
+                            class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1 font-heading">Dheeraj Dasari</h3>
+                    <p class="text-xs text-kth-cerulean tracking-wider uppercase">Research Engineer</p>
+                </div>
                 <!-- Aurora Rosato -->
                 <div class="group">
                     <div
                         class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
-                        <img src="assets/images/members/Aurora_Rosato.jpg" alt="Aurora Rosato"
+                        <img src="/assets/Aurora_Rosato-Cj5LFEes.webp" alt="Aurora Rosato"
                             class="w-full h-full object-cover transition duration-500">
                     </div>
                     <h3 class="text-lg text-white font-normal mb-1 font-heading">Aurora Rosato</h3>
@@ -176,7 +181,7 @@
                 <div class="group">
                     <div
                         class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
-                        <img src="assets/images/members/Kyle_Mudge.jpg" alt="Kyle Mudge"
+                        <img src="/assets/Kyle_Mudge-B9bYLrCi.jpg" alt="Kyle Mudge"
                             class="w-full h-full object-cover transition duration-500">
                     </div>
                     <h3 class="text-lg text-white font-normal mb-1 font-heading">Kyle Mudge</h3>
@@ -186,7 +191,7 @@
                 <div class="group">
                     <div
                         class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
-                        <img src="assets/images/members/Tien_Ying_Lu.jpg" alt="Tien-Ying Lu"
+                        <img src="/assets/Tien_Ying_Lu-BS1YPSsl.webp" alt="Tien-Ying Lu"
                             class="w-full h-full object-cover transition duration-500">
                     </div>
                     <h3 class="text-lg text-white font-normal mb-1 font-heading">Tien-Ying Lu</h3>
@@ -196,7 +201,7 @@
                 <div class="group">
                     <div
                         class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
-                        <img src="assets/images/members/Fangnan_Xu.jpg" alt="Fangnan Xu"
+                        <img src="/assets/Fangnan_Xu-vNRwzMwt.webp" alt="Fangnan Xu"
                             class="w-full h-full object-cover transition duration-500">
                     </div>
                     <h3 class="text-lg text-white font-normal mb-1 font-heading">Fangnan Xu</h3>
@@ -205,12 +210,29 @@
             </div>
         </section>
 
-        <!-- Visitors -->
+        <!-- Alumni -->
         <section>
             <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
-                Visiting
-                Professors</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+                Alumni</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+                <!-- Emanuele Perra -->
+                <div class="group">
+                    <div
+                        class="w-40 h-40 mx-auto rounded-full overflow-hidden border-2 border-kth-cerulean/20 mb-6 relative group-hover:border-kth-cerulean transition duration-500">
+                        <img src="/assets/emaper-JEfBev8C.webp" alt="Emanuele Perra"
+                            class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <h3 class="text-lg text-white font-normal mb-1 font-heading">Emanuele Perra</h3>
+                    <p class="text-xs text-kth-cerulean tracking-wider uppercase">Getinge</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visiting Professors & Collaborators -->
+        <section>
+            <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
+                Visiting Professors</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-24">
                 <div class="p-6 border border-transparent hover:border-gray-800 rounded transition duration-500">
                     <h3 class="text-white font-normal text-lg mb-2 font-heading">Prof. Dr. Steffen Leonhardt</h3>
                     <p class="text-kth-cerulean text-sm font-light">RWTH Aachen University</p>
@@ -220,12 +242,60 @@
                     <p class="text-kth-cerulean text-sm font-light">University Medical Center Göttingen</p>
                 </div>
             </div>
+
+            <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
+                Partners & Collaborators</h2>
+            <div class="mb-24">
+                <p class="text-gray-500 font-light text-sm italic mb-12">Our network of external research partners and
+                    clinical collaborators.</p>
+
+                <!-- Logo Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 items-center opacity-80">
+                    <div class="flex justify-center">
+                        <img src="/assets/Stanford-riY8EYlz.webp" alt="Stanford University"
+                            class="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/assets/karolinska_english_logo_srgb-d5Z-OlIE.webp"
+                            alt="Karolinska Hospital"
+                            class="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/assets/ki_logo_vert_neg-DaUOXw8L.webp" alt="Karolinska Institute"
+                            class="h-14 md:h-16 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/assets/Stockholm%20University-CC4KuxR5.webp" alt="Stockholm University"
+                            class="h-12 md:h-14 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/assets/StockholmsStad-G-UuSuL0.webp" alt="Stockholm Stad"
+                            class="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/assets/GIH-DDBU3RIv.webp" alt="GIH"
+                            class="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/assets/Getinge_AB_logo-C7StWEIW.webp" alt="Getinge"
+                            class="h-8 md:h-10 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/assets/Realheart-BeMT2L3O.webp" alt="Realheart"
+                            class="h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="/assets/KTH-9m3GAiJ9.webp" alt="KTH"
+                            class="h-12 md:h-14 w-auto object-contain grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Alumni -->
-        <section>
+        <!-- Student Projects -->
+        <section id="student-projects">
             <h2 class="text-white text-xs tracking-widest uppercase mb-12 border-b border-gray-800 pb-4 font-heading">
-                Alumni</h2>
+                Student Projects</h2>
 
             <div class="space-y-12">
                 <!-- 2025 -->
@@ -233,6 +303,18 @@
                     <div class="text-white font-light text-xl font-heading">2025</div>
                     <div
                         class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-sm font-light text-white">
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Karen Hrönn Sævarsdóttir</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
+                            <span class="text-sm italic leading-tight block">Active Ageing with Wearables: Designing and
+                                Evaluating Interaction Modalities (MSc Thesis)</span>
+                        </div>
+                        <div class="group">
+                            <span class="text-white block mb-1 font-bold">Shihab Ahmed, S. & Hampus Kraft</span>
+                            <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
+                            <span class="text-sm italic leading-tight block">Design, development, and evaluation of an
+                                Artificial DJ software for musical feedback (BSc Thesis)</span>
+                        </div>
                         <div class="group">
                             <span class="text-white block mb-1 font-bold">Camilla De Amicis</span>
                             <span class="text-xs uppercase tracking-wider block mb-1 text-kth-cerulean">KTH</span>
